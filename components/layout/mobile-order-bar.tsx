@@ -1,11 +1,14 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from '@/i18n/navigation';
 import { easings, durations } from '@/lib/motion';
 
 export function MobileOrderBar() {
+  const t = useTranslations('mobileOrder');
   const [visible, setVisible] = useState(false);
   const lastY = useRef(0);
 
@@ -46,7 +49,7 @@ export function MobileOrderBar() {
           transition={{ duration: 0.35, ease: easings.outSlow }}
           className="fixed inset-x-0 bottom-0 z-30 border-t border-whisper bg-ivory/95 backdrop-blur-md lg:hidden"
           role="region"
-          aria-label="Quick order"
+          aria-label={t('label')}
         >
           <div className="flex items-stretch">
             <a
@@ -55,15 +58,15 @@ export function MobileOrderBar() {
               rel="noreferrer"
               className="flex flex-1 items-center justify-center gap-2 border-r border-whisper py-4 text-mono-sm uppercase text-espresso transition-colors duration-quick active:bg-bone"
             >
-              Order on Wolt
+              {t('wolt')}
               <ArrowUpRight className="size-4" strokeWidth={1.5} aria-hidden="true" />
             </a>
-            <a
+            <Link
               href="/custom"
               className="flex flex-1 items-center justify-center bg-caramel py-4 text-mono-sm uppercase text-ivory transition-colors duration-quick active:bg-caramel-deep"
             >
-              Pre-order a Cake →
-            </a>
+              {t('cake')} →
+            </Link>
           </div>
         </motion.div>
       )}

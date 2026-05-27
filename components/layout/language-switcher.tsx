@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useLocale } from 'next-intl';
+import { Link, usePathname } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
 
-type Locale = 'RU' | 'EN' | 'LV';
+type Locale = 'ru' | 'en' | 'lv';
 
 type LanguageSwitcherProps = {
   defaultLocale?: Locale;
@@ -11,16 +12,16 @@ type LanguageSwitcherProps = {
   className?: string;
 };
 
-const LOCALES: Locale[] = ['RU', 'EN', 'LV'];
+const LOCALES: Locale[] = ['ru', 'en', 'lv'];
 
 export function LanguageSwitcher({
-  defaultLocale = 'RU',
+  defaultLocale = 'ru',
   tone = 'dark',
   className,
 }: LanguageSwitcherProps) {
-  // In production this would read from URL / cookie / next-intl.
-  // For now we hold local state so the UI is interactive.
-  const [active, setActive] = useState<Locale>(defaultLocale);
+  const currentLocale = useLocale() as Locale;
+  const pathname = usePathname() || '/';
+  const active = currentLocale || defaultLocale;
 
   const activeColor = tone === 'light' ? 'text-ivory' : 'text-espresso';
   const inactiveColor = tone === 'light' ? 'text-ivory/45' : 'text-mocha';
@@ -35,18 +36,18 @@ export function LanguageSwitcher({
       {LOCALES.map((locale, i) => (
         <span key={locale} className="contents">
           {i > 0 && <span className={cn('mx-2', separatorColor)}>·</span>}
-          <button
-            type="button"
-            onClick={() => setActive(locale)}
+          <Link
+            href={pathname}
+            locale={locale}
             aria-pressed={active === locale}
-            aria-label={`Switch language to ${locale}`}
+            aria-label={`Switch language to ${locale.toUpperCase()}`}
             className={cn(
               'transition-colors duration-quick ease-out-slow hover:text-caramel',
               active === locale ? activeColor : inactiveColor
             )}
           >
-            {locale}
-          </button>
+            {locale.toUpperCase()}
+          </Link>
         </span>
       ))}
     </div>

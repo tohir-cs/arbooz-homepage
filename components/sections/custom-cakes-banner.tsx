@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Eyebrow } from '@/components/ui/eyebrow';
@@ -9,6 +10,8 @@ import { customCakes } from '@/lib/content';
 import { viewportOnce, fadeUp, staggerContainer } from '@/lib/motion';
 
 export function CustomCakesBanner() {
+  const t = useTranslations('custom');
+
   return (
     <section
       className="relative h-[700px] w-full overflow-hidden bg-espresso lg:h-[820px]"
@@ -16,7 +19,7 @@ export function CustomCakesBanner() {
     >
       <Image
         src={customCakes.image}
-        alt={customCakes.imageAlt}
+        alt={t('imageAlt')}
         fill
         sizes="100vw"
         className="object-cover"
@@ -38,7 +41,7 @@ export function CustomCakesBanner() {
         <div className="page-gutter mx-auto w-full max-w-content">
           <div className="max-w-2xl text-ivory">
             <motion.div variants={fadeUp}>
-              <Eyebrow tone="ivory">Celebrations</Eyebrow>
+              <Eyebrow tone="ivory">{t('eyebrow')}</Eyebrow>
             </motion.div>
 
             <motion.h2
@@ -46,9 +49,9 @@ export function CustomCakesBanner() {
               variants={fadeUp}
               className="mt-6 font-display text-display-lg text-ivory lg:text-display-xl"
             >
-              Cakes made for
+              {t('titleLine1')}
               <br />
-              your <span className="italic text-rose">most</span> important day.
+              {t('titleLine2Prefix')} <span className="italic text-rose">{t('titleEmphasis')}</span> {t('titleLine2Suffix')}
             </motion.h2>
 
             <motion.div variants={fadeUp} className="mt-4">
@@ -59,9 +62,7 @@ export function CustomCakesBanner() {
               variants={fadeUp}
               className="mt-8 max-w-lg text-body-lg text-ivory/85"
             >
-              Bespoke wedding, birthday, and celebration cakes made entirely by hand.
-              Each takes five to fourteen days from first conversation to delivery.
-              From €60.
+              {t('description')}
             </motion.p>
 
             <motion.div
@@ -69,10 +70,10 @@ export function CustomCakesBanner() {
               className="mt-7 flex flex-wrap items-center gap-5"
             >
               <Button variant="primary" size="lg" as="a" href="/custom" showArrow>
-                Start a custom order
+                {t('start')}
               </Button>
               <Button variant="on-dark" as="a" href="/custom#gallery">
-                See the gallery
+                {t('gallery')}
               </Button>
             </motion.div>
           </div>

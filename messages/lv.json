@@ -1,0 +1,256 @@
+{
+  "nav": {
+    "desserts": "Deserti",
+    "customCakes": "Kukas pec pasutijuma",
+    "ourStory": "Musu stasts",
+    "visit": "Apmeklet",
+    "journal": "Zurnals",
+    "byCategory": "Pec kategorijas",
+    "featuredThisWeek": "Nedelas izvele",
+    "featuredTitle": "Maca-mellenu kuka.",
+    "featuredDescription": "Pavasara 2026 menu ir pieejama.",
+    "shop": "Pasutit",
+    "macaronGiftBoxes": "Makarunu davanu kastes",
+    "preOrderCake": "Ieprieks pasutit kuku",
+    "orderOnWolt": "Pasutit Wolt",
+    "giftCards": "Davanu kartes",
+    "menu": "Menu",
+    "orderNow": "Pasutit tagad",
+    "whatsApp": "WhatsApp +371 26 530 164",
+    "language": "Valoda",
+    "home": "Arbooz - sakums",
+    "skip": "Pariet uz saturu"
+  },
+  "common": {
+    "handmadeConfections": "Handmade Confections",
+    "subscribe": "Pierakstities",
+    "emailAddress": "E-pasts",
+    "yourEmail": "your@email.com",
+    "externalPost": "Skatit Instagram ierakstu {index}: {alt}"
+  },
+  "hero": {
+    "eyebrow": "Rudens · 2026",
+    "titleLine1": "Roku darbs,",
+    "titleEmphasis": "katru",
+    "titleLine2": "ritu.",
+    "description": "Butika konditoreja starp Antonijas un Dzirnavu ielu. Makaruni, kukas un konditorejas izstradajumi, cepti Riga kops 2013. gada.",
+    "todaysSelection": "Sodien vitrinaa",
+    "preOrderCake": "Ieprieks pasutit kuku",
+    "scroll": "Ritinat",
+    "caption": "Makaruni · 12 garsas",
+    "imageAlt": "Pasteltonu makarunu kaudze ar redzamu pildijumu"
+  },
+  "todays": {
+    "eyebrow": "Vitrina · sodien",
+    "titlePrefix": "Kas",
+    "titleEmphasis": "svaigs",
+    "titleSuffix": "uz",
+    "titleLine2": "Dzirnavu soreit.",
+    "scrollLeft": "Ritinat pa kreisi",
+    "scrollRight": "Ritinat pa labi",
+    "seeFullCounter": "Skatit visu vitrinu"
+  },
+  "products": {
+    "macaron-pistachio": {
+      "name": "Pistacija",
+      "flavor": "Makaruns",
+      "description": "Grauzdetas Sicilijas pistacijas, baltas sokolades ganass.",
+      "unit": "gab.",
+      "imageAlt": "Gaisi zali pistaciju makaruni"
+    },
+    "eclair-raspberry": {
+      "name": "Eklers · Avene",
+      "flavor": "Konditoreja",
+      "description": "Plauceta mikla, vanilas krems, svaigas avenes, cukurpuderis.",
+      "unit": "gab.",
+      "imageAlt": "Avenu ekleri ar cukurpuderi uz tumsa fona"
+    },
+    "cupcake-mango": {
+      "name": "Sokolade · Mango · Marakuja",
+      "flavor": "Kapkeiks",
+      "description": "Tumsa sokolades biskvits, mango-marakuja krems.",
+      "unit": "gab.",
+      "imageAlt": "Sokolades kapkeiki ar kremu un zelta dekoriem"
+    },
+    "macaron-strawberry-basil": {
+      "name": "Zemene un baziliks",
+      "flavor": "Makaruns",
+      "description": "Firmas savienojums kops 2014. gada.",
+      "unit": "gab.",
+      "imageAlt": "Roza zemenu-bazilika makaruni uz peleka faktureta fona"
+    },
+    "tartlet-salted-caramel": {
+      "name": "Salitas karameles tartalete",
+      "flavor": "Tartalete",
+      "description": "Sable breton, salita karamele, lazdu riekstu perlites.",
+      "unit": "gab.",
+      "imageAlt": "Salitas karameles tartalete ar zelta perlitem"
+    },
+    "cake-matcha-blueberry": {
+      "name": "Maca un mellenes",
+      "flavor": "Kuka · gabals",
+      "description": "Uji maca biskvits, mellenu kompots, maskarpone.",
+      "unit": "gabals",
+      "imageAlt": "Maca un mellenu kartainas kukas gabals uz roza skivja"
+    },
+    "sweet-caramel": {
+      "name": "Mikstas karameles",
+      "flavor": "Saldumi",
+      "description": "Fleur de sel, ietitas pergamenta, sesas komplekta.",
+      "unit": "komplekts 6",
+      "imageAlt": "Mikstas karameles pergamenta, sasietas ar auklu"
+    }
+  },
+  "categories": {
+    "eyebrow": "Kolekcija",
+    "titleLine1": "Divpadsmit makarunu garsas,",
+    "titleEmphasis": "devini",
+    "titleLine2": "kuku veidi,",
+    "titleLine3": "un ikdienas vitrina.",
+    "description": "Katru sezonu dazi favoriti aiziet un ienak tris jauni darbi - mierigs rituals, kas veido menu kops butika atversanas 2013. gada junija.",
+    "browse": "Skatit {name}",
+    "macarons": {
+      "name": "Makaruni",
+      "accent": "Divpadsmit garsas. Francu metode.",
+      "imageAlt": "Augsta pasteltonu makarunu kaudze ar redzamu pildijumu"
+    },
+    "cupcakes": {
+      "name": "Kapkeiki",
+      "accent": "Sviesta krems un bezē.",
+      "imageAlt": "Balti kapkeiki ar avenem un kremu"
+    },
+    "cakes": {
+      "name": "Kukas",
+      "accent": "Kartainas, leni ceptas.",
+      "imageAlt": "Sokolades un avenu kartainas kukas gabals"
+    },
+    "pastries": {
+      "name": "Konditoreja",
+      "accent": "Ekleri, tartaletes, su.",
+      "imageAlt": "Avenu ekleri ar cukurpuderi"
+    }
+  },
+  "founder": {
+    "eyebrow": "Musu stasts",
+    "quote": "Hobijs kluva par dzivi. Es esmu virtuve katru ritu pirms butika atversanas, un citadi es negribetu.",
+    "name": "Karina Krasovitskaya",
+    "role": "Dibinataja un konditore",
+    "bio": "Kops 2013. gada 4. junija Karina katru ritu pavada Arbooz virtuve - izstrada sezonas menu, apmaca komandu un sakarto vitrinu pirms pirma apmekletaja vienpadsmitos.",
+    "caption": "Karina pie vitrinas, 2025. gada vasara",
+    "cta": "Lasit vinas stastu",
+    "imageAlt": "Karina Krasovitskaya, Arbooz dibinataja, pie butika vitrinas"
+  },
+  "custom": {
+    "eyebrow": "Svinibas",
+    "titleLine1": "Kukas jusu",
+    "titleLine2Prefix": "",
+    "titleEmphasis": "svarigakai",
+    "titleLine2Suffix": "dienai.",
+    "description": "Kazu, dzimsanas dienu un svinibu kukas pilniba roku darba. No pirmas sarunas lidz piegadei vajadzigi pieci lidz cetrpadsmit dienas. No EUR60.",
+    "start": "Sakt pasutijumu",
+    "gallery": "Skatit galeriju",
+    "imageAlt": "Divstavu kazu kuka ar peonijam un ogam"
+  },
+  "press": {
+    "eyebrow": "Prese un atziniba",
+    "titlePrefix": "Maza",
+    "titleEmphasis": "konditorejas perle",
+    "titleSuffix": "kas klusi iegust vardu.",
+    "ratingLabel": "4.7 no 5 zvaigznem",
+    "items": {
+      "google": {
+        "label": "Google · 4.7",
+        "quote": "Maza konditorejas perle starp Antonijas un Dzirnavu ielu.",
+        "source": "no 177 atsauksmem"
+      },
+      "riga": {
+        "label": "Riga 2014",
+        "quote": "Izvelets ka viens no divpadsmit zimoliem, kas parstaveja Rigu Eiropas kulturas galvaspilsetas gada.",
+        "source": "Latvijas Arlietu ministrija"
+      },
+      "local": {
+        "label": "Vieteja prese",
+        "quote": "Maca kukas del vien ir verts skersot upi.",
+        "source": "Anonimi, otrdiena"
+      }
+    }
+  },
+  "visit": {
+    "eyebrow": "Apmeklejiet mus",
+    "titleLine1": "Desmit vietas un vitrina,",
+    "titleLine2Prefix": "pasleptas uz",
+    "titleEmphasis": "Dzirnavu",
+    "address": "Dzirnavu iela 34A",
+    "city": "Riga, LV-1010",
+    "hours": "Darba laiks",
+    "days": {
+      "tueFri": "Otrdiena - piektdiena",
+      "sat": "Sestdiena",
+      "mon": "Pirmdiena",
+      "sun": "Svetdiena"
+    },
+    "closed": "Slegts",
+    "email": "E-pasts",
+    "directions": "Norades",
+    "whatsapp": "Rakstit WhatsApp",
+    "caption": "Butiks Dzirnavu iela, fotografets 2025. gada septembri",
+    "imageAlt": "Arbooz butika interjers ar dzeltenam ziedu tapetem un baltiem galdiem",
+    "mapLabel": "Stilizeta karte ar Arbooz atrasanas vietu Dzirnavu 34A, Riga"
+  },
+  "instagram": {
+    "eyebrow": "No virtuves",
+    "description": "Aiz vitrinas, jauni cepumi un sezonas eksperimenti - fotografeti dabiska gaisma katru ritu.",
+    "alts": {
+      "1": "Makaruna tuvplans Instagram",
+      "2": "Pasteltonu makarunu kaste Instagram",
+      "3": "Konditorejas riku un sastavdalu izklajums",
+      "4": "Kukas dekoresana procesa",
+      "5": "Gatavas tartaletes uz paplates",
+      "6": "Sokolades deserta tuvplans"
+    }
+  },
+  "newsletter": {
+    "eyebrow": "Virtuves jaunumi",
+    "titlePrefix": "Palieciet",
+    "titleEmphasis": "virtuve",
+    "description": "Sezonas menu, piezimes no Karinas un reizem kada recepte. Ne biezak ka reizi menesi.",
+    "yourEmail": "Jusu e-pasts",
+    "placeholder": "you@arbooz.lv",
+    "success": "Paldies - tiksimies virtuve.",
+    "confirmation": "Apstiprinajums nosutits uz {email}",
+    "note": "RU · EN · LV - izvelieties valodu augsa"
+  },
+  "footer": {
+    "tagline": "Roku darba konditoreja kops 2013",
+    "visit": "Apmeklet",
+    "shop": "Pasutit",
+    "story": "Stasts",
+    "connect": "Kontakti",
+    "stayTitle": "Palieciet virtuve.",
+    "stayDescription": "Sezonas menu un aizkulises no Karinas. Ne biezak ka reizi menesi.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "allergens": "Alergeni",
+    "links": {
+      "macarons": "Makaruni",
+      "cakes": "Kukas",
+      "cupcakes": "Kapkeiki",
+      "customCakes": "Kukas pec pasutijuma",
+      "giftBoxes": "Davanu kastes",
+      "seasonal": "Sezonas",
+      "ourStory": "Musu stasts",
+      "press": "Prese",
+      "journal": "Zurnals",
+      "contact": "Kontakti",
+      "allergens": "Alergeni",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "mobileOrder": {
+    "label": "Atra pasutisana",
+    "wolt": "Pasutit Wolt",
+    "cake": "Ieprieks pasutit kuku"
+  }
+}

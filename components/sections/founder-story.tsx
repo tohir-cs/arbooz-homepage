@@ -1,12 +1,15 @@
 'use client';
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { Eyebrow } from '@/components/ui/eyebrow';
 import { Button } from '@/components/ui/button';
 import { Reveal } from '@/components/ui/reveal';
 import { founder } from '@/lib/content';
 
 export function FounderStory() {
+  const t = useTranslations('founder');
+
   return (
     <section
       className="section-y bg-ivory"
@@ -19,20 +22,20 @@ export function FounderStory() {
             <div className="relative aspect-[4/5] overflow-hidden bg-bone">
               <Image
                 src={founder.image}
-                alt={founder.imageAlt}
+                alt={t('imageAlt')}
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-cover"
               />
             </div>
             <p className="mt-4 text-mono-xs uppercase text-ash">
-              Karina at the counter, summer 2025
+              {t('caption')}
             </p>
           </Reveal>
 
           {/* Quote + bio — right on desktop, 6 columns offset */}
           <Reveal className="col-span-12 lg:col-span-6 lg:col-start-7 lg:pt-7">
-            <Eyebrow>Our story</Eyebrow>
+            <Eyebrow>{t('eyebrow')}</Eyebrow>
 
             <div className="mt-8 flex items-start gap-6">
               <span
@@ -46,22 +49,22 @@ export function FounderStory() {
                   id="founder-heading"
                   className="font-display italic text-display-sm text-espresso lg:text-display-md"
                 >
-                  {founder.quote}
+                  {t('quote')}
                 </blockquote>
               </div>
             </div>
 
             <figcaption className="mt-6 text-mono-sm uppercase text-mocha">
-              <span className="text-espresso">{founder.name}</span> · {founder.role}
+              <span className="text-espresso">{t('name')}</span> · {t('role')}
             </figcaption>
 
             <p className="mt-7 max-w-xl text-body-lg text-mocha">
-              {founder.bio}
+              {t('bio')}
             </p>
 
             <div className="mt-7">
               <Button variant="secondary" as="a" href="/story" showArrow>
-                Read her story
+                {t('cta')}
               </Button>
             </div>
           </Reveal>

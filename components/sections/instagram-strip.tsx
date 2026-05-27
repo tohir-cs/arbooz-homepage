@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Instagram, ArrowUpRight } from 'lucide-react';
 import { Eyebrow } from '@/components/ui/eyebrow';
@@ -9,13 +10,16 @@ import { instagramFeed } from '@/lib/content';
 import { staggerContainer, fadeUp, viewportOnce } from '@/lib/motion';
 
 export function InstagramStrip() {
+  const t = useTranslations('instagram');
+  const tCommon = useTranslations('common');
+
   return (
     <section className="section-y-tight bg-ivory" aria-labelledby="instagram-heading">
       <div className="page-gutter mx-auto max-w-content">
         <Reveal>
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
             <div>
-              <Eyebrow>From the kitchen</Eyebrow>
+              <Eyebrow>{t('eyebrow')}</Eyebrow>
               <h2
                 id="instagram-heading"
                 className="mt-4 font-display text-display-md text-espresso"
@@ -32,7 +36,7 @@ export function InstagramStrip() {
               </h2>
             </div>
             <p className="max-w-xs text-body-md text-mocha">
-              Behind the counter, new bakes, and seasonal experiments — photographed in natural light each morning.
+              {t('description')}
             </p>
           </div>
         </Reveal>
@@ -52,12 +56,15 @@ export function InstagramStrip() {
             href="https://instagram.com/arbooz.lv"
             target="_blank"
             rel="noreferrer"
-            aria-label={`View Instagram post ${index + 1}: ${post.alt}`}
+            aria-label={tCommon('externalPost', {
+              index: index + 1,
+              alt: t(`alts.${post.id}`),
+            })}
             className="group relative block aspect-square overflow-hidden bg-bone"
           >
             <Image
               src={post.image}
-              alt={post.alt}
+              alt={t(`alts.${post.id}`)}
               fill
               sizes="(min-width: 1024px) 17vw, (min-width: 768px) 33vw, 50vw"
               className="object-cover transition-transform duration-slow ease-out-slow group-hover:scale-[1.05]"

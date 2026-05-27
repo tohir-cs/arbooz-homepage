@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useLocale, useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Eyebrow } from '@/components/ui/eyebrow';
@@ -20,19 +21,23 @@ function CategoryTile({
   className?: string;
   index: number;
 }) {
+  const t = useTranslations(`categories.${category.id}`);
+  const tCategories = useTranslations('categories');
+  const locale = useLocale();
+
   return (
     <motion.a
-      href={category.href}
+      href={`/${locale}${category.href}`}
       variants={fadeUp}
       className={cn(
         'group relative block overflow-hidden bg-bone',
         className
       )}
-      aria-label={`Browse ${category.name}`}
+      aria-label={tCategories('browse', { name: t('name') })}
     >
       <Image
         src={category.image}
-        alt={category.imageAlt}
+        alt={t('imageAlt')}
         fill
         sizes={category.span === 'large' ? '(min-width: 1024px) 58vw, 100vw' : '(min-width: 1024px) 38vw, 100vw'}
         className="object-cover transition-transform duration-luxe ease-out-slow group-hover:scale-[1.04]"
@@ -51,10 +56,10 @@ function CategoryTile({
               0{index + 1}
             </span>
             <h3 className="mt-2 font-display text-display-md text-ivory">
-              {category.name}
+              {t('name')}
             </h3>
             <p className="mt-2 max-w-xs text-body-md text-ivory/75">
-              {category.accent}
+              {t('accent')}
             </p>
           </div>
 
@@ -71,6 +76,7 @@ function CategoryTile({
 }
 
 export function Categories() {
+  const t = useTranslations('categories');
   // Asymmetric grid pattern: 7+5 then 5+7
   // Macarons (large) + Cupcakes (small)
   // Cakes (small) + Pastries (large)
@@ -80,22 +86,21 @@ export function Categories() {
         <Reveal>
           <div className="grid grid-cols-12 items-end gap-y-6 lg:gap-x-8">
             <div className="col-span-12 lg:col-span-8">
-              <Eyebrow>The collection</Eyebrow>
+              <Eyebrow>{t('eyebrow')}</Eyebrow>
               <h2
                 id="categories-heading"
                 className="mt-5 font-display text-display-lg text-espresso"
               >
-                Twelve flavors of macaron,
+                {t('titleLine1')}
                 <br />
-                <span className="italic">nine</span> kinds of cake,
+                <span className="italic">{t('titleEmphasis')}</span> {t('titleLine2')}
                 <br />
-                and the daily counter.
+                {t('titleLine3')}
               </h2>
             </div>
             <div className="col-span-12 lg:col-span-4">
               <p className="text-body-md text-mocha">
-                Each season we retire a few favorites and introduce three new pieces — a quiet
-                ritual that has shaped the menu since the boutique opened in June 2013.
+                {t('description')}
               </p>
             </div>
           </div>

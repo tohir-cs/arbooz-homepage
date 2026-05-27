@@ -1,29 +1,32 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
 import { LanguageSwitcher } from './language-switcher';
 import { Eyebrow } from '@/components/ui/eyebrow';
 import { Ornament } from '@/components/ui/ornament';
+import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
 import { easings, durations } from '@/lib/motion';
 
 const NAV_LINKS = [
-  { label: 'Desserts', href: '/desserts' },
-  { label: 'Custom Cakes', href: '/custom' },
-  { label: 'Our Story', href: '/story' },
-  { label: 'Visit', href: '/visit' },
-  { label: 'Journal', href: '/journal' },
+  { labelKey: 'desserts', href: '/desserts' },
+  { labelKey: 'customCakes', href: '/custom' },
+  { labelKey: 'ourStory', href: '/story' },
+  { labelKey: 'visit', href: '/visit' },
+  { labelKey: 'journal', href: '/journal' },
 ];
 
 const SECONDARY = [
-  { label: 'Order on Wolt', href: 'https://wolt.com', external: true },
-  { label: 'WhatsApp +371 26 530 164', href: 'https://wa.me/37126530164', external: true },
+  { labelKey: 'orderOnWolt', href: 'https://wolt.com', external: true },
+  { labelKey: 'whatsApp', href: 'https://wa.me/37126530164', external: true },
 ];
 
 export function MobileNav({ transparent = true }: { transparent?: boolean }) {
+  const t = useTranslations('nav');
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -80,9 +83,9 @@ export function MobileNav({ transparent = true }: { transparent?: boolean }) {
             <Menu strokeWidth={1.25} className="size-6" aria-hidden="true" />
           </button>
 
-          <a href="/" aria-label="Arbooz — Home" className="block w-24">
+          <Link href="/" aria-label={t('home')} className="block w-24">
             <Logo withTagline={false} />
-          </a>
+          </Link>
 
           <div className="-mr-1">
             <LanguageSwitcher />
@@ -127,11 +130,11 @@ export function MobileNav({ transparent = true }: { transparent?: boolean }) {
               </div>
 
               <div className="flex-1 overflow-y-auto px-6 pb-8 pt-8">
-                <Eyebrow>Menu</Eyebrow>
+                <Eyebrow>{t('menu')}</Eyebrow>
                 <ul className="mt-6 space-y-7">
                   {NAV_LINKS.map((link, i) => (
                     <motion.li
-                      key={link.label}
+                      key={link.labelKey}
                       initial={{ opacity: 0, x: -16 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{
@@ -140,13 +143,13 @@ export function MobileNav({ transparent = true }: { transparent?: boolean }) {
                         delay: 0.1 + i * 0.05,
                       }}
                     >
-                      <a
+                      <Link
                         href={link.href}
                         onClick={() => setOpen(false)}
                         className="block font-display text-display-sm text-espresso"
                       >
-                        {link.label}
-                      </a>
+                        {t(link.labelKey)}
+                      </Link>
                     </motion.li>
                   ))}
                 </ul>
@@ -155,17 +158,17 @@ export function MobileNav({ transparent = true }: { transparent?: boolean }) {
                   <Ornament />
                 </div>
 
-                <Eyebrow>Order now</Eyebrow>
+                <Eyebrow>{t('orderNow')}</Eyebrow>
                 <ul className="mt-5 space-y-4">
                   {SECONDARY.map((link) => (
-                    <li key={link.label}>
+                    <li key={link.labelKey}>
                       <a
                         href={link.href}
                         target={link.external ? '_blank' : undefined}
                         rel={link.external ? 'noreferrer' : undefined}
                         className="block text-body-md text-espresso underline-reveal w-fit"
                       >
-                        {link.label}
+                        {t(link.labelKey)}
                       </a>
                     </li>
                   ))}
@@ -173,7 +176,7 @@ export function MobileNav({ transparent = true }: { transparent?: boolean }) {
               </div>
 
               <div className="border-t border-whisper px-6 py-6">
-                <Eyebrow className="mb-3">Language</Eyebrow>
+                <Eyebrow className="mb-3">{t('language')}</Eyebrow>
                 <LanguageSwitcher />
               </div>
             </motion.aside>

@@ -1,10 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { ChevronDown } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
+import { Link } from '@/i18n/navigation';
 import { LanguageSwitcher } from './language-switcher';
 import { Eyebrow } from '@/components/ui/eyebrow';
 import { categories } from '@/lib/content';
@@ -12,11 +14,11 @@ import { cn } from '@/lib/utils';
 import { easings, durations } from '@/lib/motion';
 
 const NAV_LINKS = [
-  { label: 'Desserts', href: '/desserts', hasMenu: true },
-  { label: 'Custom Cakes', href: '/custom' },
-  { label: 'Our Story', href: '/story' },
-  { label: 'Visit', href: '/visit' },
-  { label: 'Journal', href: '/journal' },
+  { labelKey: 'desserts', href: '/desserts', hasMenu: true },
+  { labelKey: 'customCakes', href: '/custom' },
+  { labelKey: 'ourStory', href: '/story' },
+  { labelKey: 'visit', href: '/visit' },
+  { labelKey: 'journal', href: '/journal' },
 ];
 
 type NavbarProps = {
@@ -25,6 +27,8 @@ type NavbarProps = {
 };
 
 export function Navbar({ transparent = true }: NavbarProps) {
+  const t = useTranslations('nav');
+  const tCategories = useTranslations('categories');
   const [scrolled, setScrolled] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
 
@@ -51,7 +55,7 @@ export function Navbar({ transparent = true }: NavbarProps) {
         href="#main"
         className="sr-only-focusable absolute left-4 top-4 z-10 bg-espresso px-4 py-2 text-mono-sm text-ivory"
       >
-        Skip to content
+        {t('skip')}
       </a>
 
       <nav
@@ -59,10 +63,10 @@ export function Navbar({ transparent = true }: NavbarProps) {
         className="page-gutter mx-auto flex h-full max-w-content items-center justify-between"
       >
         {/* Left — wordmark */}
-        <a
+        <Link
           href="/"
           className="block transition-all"
-          aria-label="Arbooz — Home"
+          aria-label={t('home')}
           style={{
             width: isElevated ? 110 : 140,
             transitionDuration: '450ms',
@@ -70,20 +74,20 @@ export function Navbar({ transparent = true }: NavbarProps) {
           }}
         >
           <Logo withTagline={!isElevated} />
-        </a>
+        </Link>
 
         {/* Center — nav links */}
         <ul className="hidden items-center gap-8 lg:flex" role="menubar">
           {NAV_LINKS.map((link) => (
             <li
-              key={link.label}
+              key={link.labelKey}
               role="none"
               onMouseEnter={() => link.hasMenu && setMegaOpen(true)}
               onMouseLeave={() => link.hasMenu && setMegaOpen(false)}
               className="relative"
             >
-              <a href={link.href} role="menuitem" className="nav-link inline-flex items-center gap-1.5">
-                {link.label}
+              <Link href={link.href} role="menuitem" className="nav-link inline-flex items-center gap-1.5">
+                {t(link.labelKey)}
                 {link.hasMenu && (
                   <ChevronDown
                     className={cn(
@@ -94,7 +98,7 @@ export function Navbar({ transparent = true }: NavbarProps) {
                     aria-hidden="true"
                   />
                 )}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -125,72 +129,72 @@ export function Navbar({ transparent = true }: NavbarProps) {
             <div className="page-gutter mx-auto grid max-w-content grid-cols-12 gap-8 py-8">
               {/* Categories list */}
               <div className="col-span-3">
-                <Eyebrow>By Category</Eyebrow>
+                <Eyebrow>{t('byCategory')}</Eyebrow>
                 <ul className="mt-5 space-y-3">
                   {categories.map((cat) => (
                     <li key={cat.id}>
-                      <a
+                      <Link
                         href={cat.href}
                         className="font-display text-heading-md text-espresso underline-reveal inline-block"
                       >
-                        {cat.name}
-                      </a>
+                        {tCategories(`${cat.id}.name`)}
+                      </Link>
                     </li>
                   ))}
                   <li>
-                    <a
+                    <Link
                       href="/desserts/sweets"
                       className="font-display text-heading-md text-espresso underline-reveal inline-block"
                     >
                       Sweets
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="/desserts/seasonal"
                       className="font-display text-heading-md text-caramel italic underline-reveal inline-block"
                     >
                       Seasonal
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
 
               {/* Featured editorial card */}
               <div className="col-span-6">
-                <Eyebrow>Featured this week</Eyebrow>
-                <a href="/desserts/cakes" className="mt-5 group block">
+                <Eyebrow>{t('featuredThisWeek')}</Eyebrow>
+                <Link href="/desserts/cakes" className="mt-5 group block">
                   <div className="relative aspect-[16/9] overflow-hidden bg-bone">
                     <Image
                       src={categories[2].image}
-                      alt={categories[2].imageAlt}
+                      alt={tCategories('cakes.imageAlt')}
                       fill
                       sizes="40vw"
                       className="object-cover transition-transform duration-slow ease-out-slow group-hover:scale-[1.04]"
                     />
                   </div>
                   <h3 className="mt-4 font-display text-display-sm text-espresso">
-                    The matcha-blueberry cake.
+                    {t('featuredTitle')}
                   </h3>
                   <p className="mt-1 text-body-md text-mocha">
-                    Spring 2026 menu now available.
+                    {t('featuredDescription')}
                   </p>
-                </a>
+                </Link>
               </div>
 
               {/* Quick links */}
               <div className="col-span-3">
-                <Eyebrow>Shop</Eyebrow>
+                <Eyebrow>{t('shop')}</Eyebrow>
                 <ul className="mt-5 space-y-3 text-body-md">
                   <li>
-                    <a href="/desserts/macarons#gift" className="underline-reveal inline-block text-espresso">
-                      Macaron gift boxes
-                    </a>
+                    <Link href="/desserts/macarons#gift" className="underline-reveal inline-block text-espresso">
+                      {t('macaronGiftBoxes')}
+                    </Link>
                   </li>
                   <li>
-                    <a href="/custom" className="underline-reveal inline-block text-espresso">
-                      Pre-order a cake
-                    </a>
+                    <Link href="/custom" className="underline-reveal inline-block text-espresso">
+                      {t('preOrderCake')}
+                    </Link>
                   </li>
                   <li>
                     <a
@@ -199,13 +203,13 @@ export function Navbar({ transparent = true }: NavbarProps) {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Order on Wolt
+                      {t('orderOnWolt')}
                     </a>
                   </li>
                   <li>
-                    <a href="/giftcards" className="underline-reveal inline-block text-espresso">
-                      Gift cards
-                    </a>
+                    <Link href="/giftcards" className="underline-reveal inline-block text-espresso">
+                      {t('giftCards')}
+                    </Link>
                   </li>
                 </ul>
               </div>

@@ -1,0 +1,256 @@
+{
+  "nav": {
+    "desserts": "Desserts",
+    "customCakes": "Custom Cakes",
+    "ourStory": "Our Story",
+    "visit": "Visit",
+    "journal": "Journal",
+    "byCategory": "By Category",
+    "featuredThisWeek": "Featured this week",
+    "featuredTitle": "The matcha-blueberry cake.",
+    "featuredDescription": "Spring 2026 menu now available.",
+    "shop": "Shop",
+    "macaronGiftBoxes": "Macaron gift boxes",
+    "preOrderCake": "Pre-order a cake",
+    "orderOnWolt": "Order on Wolt",
+    "giftCards": "Gift cards",
+    "menu": "Menu",
+    "orderNow": "Order now",
+    "whatsApp": "WhatsApp +371 26 530 164",
+    "language": "Language",
+    "home": "Arbooz - Home",
+    "skip": "Skip to content"
+  },
+  "common": {
+    "handmadeConfections": "Handmade Confections",
+    "subscribe": "Subscribe",
+    "emailAddress": "Email address",
+    "yourEmail": "your@email.com",
+    "externalPost": "View Instagram post {index}: {alt}"
+  },
+  "hero": {
+    "eyebrow": "Autumn · 2026",
+    "titleLine1": "Made by hand,",
+    "titleEmphasis": "every",
+    "titleLine2": "morning.",
+    "description": "A boutique patisserie tucked between Antonijas and Dzirnavu. Macarons, cakes, and pastries baked fresh in Riga since 2013.",
+    "todaysSelection": "Today's selection",
+    "preOrderCake": "Pre-order a cake",
+    "scroll": "Scroll",
+    "caption": "Macarons · 12 flavors",
+    "imageAlt": "A stack of pastel macarons sliced to reveal their fillings"
+  },
+  "todays": {
+    "eyebrow": "The counter · today",
+    "titlePrefix": "What's",
+    "titleEmphasis": "fresh",
+    "titleSuffix": "on",
+    "titleLine2": "Dzirnavu this morning.",
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right",
+    "seeFullCounter": "See the full counter"
+  },
+  "products": {
+    "macaron-pistachio": {
+      "name": "Pistachio",
+      "flavor": "Macaron",
+      "description": "Toasted Sicilian pistachio, white chocolate ganache.",
+      "unit": "each",
+      "imageAlt": "Pistachio macarons in a soft pale green"
+    },
+    "eclair-raspberry": {
+      "name": "Eclair · Raspberry",
+      "flavor": "Pastry",
+      "description": "Choux, vanilla cream, fresh raspberries, icing sugar.",
+      "unit": "each",
+      "imageAlt": "Raspberry eclairs dusted with powdered sugar on dark slate"
+    },
+    "cupcake-mango": {
+      "name": "Chocolate · Mango · Passion Fruit",
+      "flavor": "Cupcake",
+      "description": "Dark chocolate sponge, mango passion-fruit cream.",
+      "unit": "each",
+      "imageAlt": "Chocolate cupcakes topped with cream and gold flakes"
+    },
+    "macaron-strawberry-basil": {
+      "name": "Strawberry & Basil",
+      "flavor": "Macaron",
+      "description": "A signature pairing since 2014.",
+      "unit": "each",
+      "imageAlt": "Pink strawberry-basil macarons on a textured grey surface"
+    },
+    "tartlet-salted-caramel": {
+      "name": "Salted Caramel Tartlet",
+      "flavor": "Tartlet",
+      "description": "Sable breton, salted caramel, hazelnut pearls.",
+      "unit": "each",
+      "imageAlt": "Salted caramel tartlet topped with golden pearls"
+    },
+    "cake-matcha-blueberry": {
+      "name": "Matcha & Blueberry",
+      "flavor": "Cake · slice",
+      "description": "Uji matcha sponge, blueberry compote, mascarpone.",
+      "unit": "slice",
+      "imageAlt": "A slice of matcha and blueberry layer cake on a pink plate"
+    },
+    "sweet-caramel": {
+      "name": "Soft Caramels",
+      "flavor": "Sweets",
+      "description": "Fleur de sel, wrapped in parchment, six to a bundle.",
+      "unit": "bundle of 6",
+      "imageAlt": "Soft caramels wrapped in parchment paper, tied with string"
+    }
+  },
+  "categories": {
+    "eyebrow": "The collection",
+    "titleLine1": "Twelve flavors of macaron,",
+    "titleEmphasis": "nine",
+    "titleLine2": "kinds of cake,",
+    "titleLine3": "and the daily counter.",
+    "description": "Each season we retire a few favorites and introduce three new pieces - a quiet ritual that has shaped the menu since the boutique opened in June 2013.",
+    "browse": "Browse {name}",
+    "macarons": {
+      "name": "Macarons",
+      "accent": "Twelve flavors. The French method.",
+      "imageAlt": "A tall stack of pastel macarons, sliced to reveal their fillings"
+    },
+    "cupcakes": {
+      "name": "Cupcakes",
+      "accent": "Buttercream and meringue.",
+      "imageAlt": "White velvet cupcakes topped with raspberry and cream"
+    },
+    "cakes": {
+      "name": "Cakes",
+      "accent": "Layered, slow-baked.",
+      "imageAlt": "A slice of layered chocolate raspberry cake"
+    },
+    "pastries": {
+      "name": "Pastries",
+      "accent": "Eclairs, tartlets, choux.",
+      "imageAlt": "Raspberry eclairs with powdered sugar"
+    }
+  },
+  "founder": {
+    "eyebrow": "Our story",
+    "quote": "A hobby that became a life. I am in the kitchen every morning before the boutique opens, and I would not have it any other way.",
+    "name": "Karina Krasovitskaya",
+    "role": "Founder & pastry chef",
+    "bio": "Since June 4th, 2013, Karina has spent every morning in the Arbooz kitchen - developing the seasonal menu, training the team, and arranging the counter before the first customer arrives at eleven.",
+    "caption": "Karina at the counter, summer 2025",
+    "cta": "Read her story",
+    "imageAlt": "Karina Krasovitskaya, founder of Arbooz, at the counter of the boutique"
+  },
+  "custom": {
+    "eyebrow": "Celebrations",
+    "titleLine1": "Cakes made for",
+    "titleLine2Prefix": "your",
+    "titleEmphasis": "most",
+    "titleLine2Suffix": "important day.",
+    "description": "Bespoke wedding, birthday, and celebration cakes made entirely by hand. Each takes five to fourteen days from first conversation to delivery. From EUR60.",
+    "start": "Start a custom order",
+    "gallery": "See the gallery",
+    "imageAlt": "A two-tier semi-naked wedding cake topped with fresh peonies and berries"
+  },
+  "press": {
+    "eyebrow": "Press & recognition",
+    "titlePrefix": "A small",
+    "titleEmphasis": "jewel of a patisserie",
+    "titleSuffix": "quietly making a name.",
+    "ratingLabel": "4.7 out of 5 stars",
+    "items": {
+      "google": {
+        "label": "Google · 4.7",
+        "quote": "A small jewel of a patisserie tucked between Antonijas and Dzirnavu.",
+        "source": "from 177 reviews"
+      },
+      "riga": {
+        "label": "Riga 2014",
+        "quote": "Selected as one of twelve brands representing Riga at the European Capital of Culture year.",
+        "source": "Ministry of Foreign Affairs, Latvia"
+      },
+      "local": {
+        "label": "Local press",
+        "quote": "The matcha cake alone is worth crossing the river for.",
+        "source": "Anonymous, on a Tuesday"
+      }
+    }
+  },
+  "visit": {
+    "eyebrow": "Visit us",
+    "titleLine1": "Ten seats and a counter,",
+    "titleLine2Prefix": "tucked away on",
+    "titleEmphasis": "Dzirnavu",
+    "address": "Dzirnavu iela 34A",
+    "city": "Riga, LV-1010",
+    "hours": "Hours",
+    "days": {
+      "tueFri": "Tuesday - Friday",
+      "sat": "Saturday",
+      "mon": "Monday",
+      "sun": "Sunday"
+    },
+    "closed": "Closed",
+    "email": "Email",
+    "directions": "Get directions",
+    "whatsapp": "WhatsApp us",
+    "caption": "The boutique on Dzirnavu, photographed September 2025",
+    "imageAlt": "The interior of the Arbooz boutique with yellow floral wallpaper and white tables",
+    "mapLabel": "Stylized map showing the Arbooz location at Dzirnavu 34A, Riga"
+  },
+  "instagram": {
+    "eyebrow": "From the kitchen",
+    "description": "Behind the counter, new bakes, and seasonal experiments - photographed in natural light each morning.",
+    "alts": {
+      "1": "Macaron close-up shot for Instagram",
+      "2": "Box of pastel macarons for Instagram",
+      "3": "Flat lay of pastry tools and ingredients",
+      "4": "Cake decorating in progress",
+      "5": "Finished tartlets on a serving tray",
+      "6": "Chocolate dessert close-up"
+    }
+  },
+  "newsletter": {
+    "eyebrow": "The kitchen newsletter",
+    "titlePrefix": "Stay in the",
+    "titleEmphasis": "kitchen",
+    "description": "Seasonal menus, behind-the-scenes notes from Karina, and the occasional recipe. Never more than once a month.",
+    "yourEmail": "Your email",
+    "placeholder": "you@arbooz.lv",
+    "success": "Thank you - see you in the kitchen.",
+    "confirmation": "Confirmation sent to {email}",
+    "note": "RU · EN · LV - choose your language at the top"
+  },
+  "footer": {
+    "tagline": "Handmade confections since 2013",
+    "visit": "Visit",
+    "shop": "Shop",
+    "story": "Story",
+    "connect": "Connect",
+    "stayTitle": "Stay in the kitchen.",
+    "stayDescription": "Seasonal menus and behind-the-scenes notes from Karina. Never more than once a month.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "allergens": "Allergens",
+    "links": {
+      "macarons": "Macarons",
+      "cakes": "Cakes",
+      "cupcakes": "Cupcakes",
+      "customCakes": "Custom cakes",
+      "giftBoxes": "Gift boxes",
+      "seasonal": "Seasonal",
+      "ourStory": "Our story",
+      "press": "Press",
+      "journal": "Journal",
+      "contact": "Contact",
+      "allergens": "Allergens",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "mobileOrder": {
+    "label": "Quick order",
+    "wolt": "Order on Wolt",
+    "cake": "Pre-order a Cake"
+  }
+}

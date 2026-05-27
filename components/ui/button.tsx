@@ -8,6 +8,7 @@ import {
 } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { ArrowRight } from 'lucide-react';
+import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
 
 const buttonStyles = cva(
@@ -81,6 +82,22 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
 
     if (rest.as === 'a') {
       const { as: _ignored, href, ...anchorRest } = rest;
+      const isLocalPath = href.startsWith('/');
+
+      if (isLocalPath) {
+        return (
+          <Link
+            ref={ref as React.Ref<HTMLAnchorElement>}
+            href={href}
+            className={classes}
+            {...anchorRest}
+          >
+            <span>{children}</span>
+            {showArrow && <Arrow />}
+          </Link>
+        );
+      }
+
       return (
         <a
           ref={ref as React.Ref<HTMLAnchorElement>}

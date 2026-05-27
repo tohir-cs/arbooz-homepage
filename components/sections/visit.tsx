@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { MapPin, Phone, Mail, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Eyebrow } from '@/components/ui/eyebrow';
@@ -8,11 +9,11 @@ import { Reveal } from '@/components/ui/reveal';
 import { visit } from '@/lib/content';
 
 // Stylized hand-drawn map of central Riga around Dzirnavu 34A
-function StylizedMap() {
+function StylizedMap({ label }: { label: string }) {
   return (
     <div
       className="relative aspect-[16/9] w-full overflow-hidden border border-whisper bg-bone"
-      aria-label="Stylized map showing the Arbooz location at Dzirnavu 34A, Riga"
+      aria-label={label}
       role="img"
     >
       <svg
@@ -104,6 +105,14 @@ function StylizedMap() {
 }
 
 export function Visit() {
+  const t = useTranslations('visit');
+  const hours = [
+    { day: t('days.tueFri'), time: '11:00 – 18:00' },
+    { day: t('days.sat'), time: '11:00 – 17:00' },
+    { day: t('days.mon'), time: '11:00 – 18:00' },
+    { day: t('days.sun'), time: t('closed') },
+  ];
+
   return (
     <section
       className="section-y bg-bone/40"
@@ -116,43 +125,43 @@ export function Visit() {
             <div className="relative aspect-[4/5] overflow-hidden bg-bone lg:aspect-[5/6]">
               <Image
                 src={visit.image}
-                alt={visit.imageAlt}
+                alt={t('imageAlt')}
                 fill
                 sizes="(min-width: 1024px) 55vw, 100vw"
                 className="object-cover"
               />
             </div>
             <p className="mt-4 text-mono-xs uppercase text-ash">
-              The boutique on Dzirnavu, photographed September 2025
+              {t('caption')}
             </p>
           </Reveal>
 
           <Reveal className="col-span-12 lg:col-span-5 lg:pt-8">
-            <Eyebrow>Visit us</Eyebrow>
+            <Eyebrow>{t('eyebrow')}</Eyebrow>
 
             <h2
               id="visit-heading"
               className="mt-5 font-display text-display-md text-espresso"
             >
-              Ten seats and a counter,
+              {t('titleLine1')}
               <br />
-              tucked away on <span className="italic">Dzirnavu</span>.
+              {t('titleLine2Prefix')} <span className="italic">{t('titleEmphasis')}</span>.
             </h2>
 
             {/* Address */}
             <div className="mt-7 flex items-start gap-4">
               <MapPin className="mt-1 size-5 shrink-0 text-caramel" strokeWidth={1.5} aria-hidden="true" />
               <div>
-                <p className="text-body-lg text-espresso">{visit.address}</p>
-                <p className="text-body-md text-mocha">{visit.city}</p>
+                <p className="text-body-lg text-espresso">{t('address')}</p>
+                <p className="text-body-md text-mocha">{t('city')}</p>
               </div>
             </div>
 
             {/* Hours table */}
             <div className="mt-8">
-              <p className="text-mono-sm uppercase text-mocha">Hours</p>
+              <p className="text-mono-sm uppercase text-mocha">{t('hours')}</p>
               <dl className="mt-3 divide-y divide-whisper">
-                {visit.hours.map((h) => (
+                {hours.map((h) => (
                   <div key={h.day} className="flex items-baseline justify-between py-3">
                     <dt className="text-body-md text-espresso">{h.day}</dt>
                     <dd className="font-sans text-body-md text-mocha tabular-nums">{h.time}</dd>
@@ -175,7 +184,7 @@ export function Visit() {
                 className="inline-flex items-center gap-2 text-espresso underline-reveal w-fit"
               >
                 <Mail className="size-4 text-caramel" strokeWidth={1.5} aria-hidden="true" />
-                Email
+                {t('email')}
               </a>
             </div>
 
@@ -189,7 +198,7 @@ export function Visit() {
                 rel="noreferrer"
                 showArrow
               >
-                Get directions
+                {t('directions')}
               </Button>
               <Button
                 variant="tertiary"
@@ -199,7 +208,7 @@ export function Visit() {
                 rel="noreferrer"
               >
                 <MessageCircle className="mr-1 size-4" strokeWidth={1.5} aria-hidden="true" />
-                WhatsApp us
+                {t('whatsapp')}
               </Button>
             </div>
           </Reveal>
@@ -207,7 +216,7 @@ export function Visit() {
 
         {/* Map */}
         <Reveal className="mt-16 lg:mt-24">
-          <StylizedMap />
+          <StylizedMap label={t('mapLabel')} />
         </Reveal>
       </div>
     </section>

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Eyebrow } from '@/components/ui/eyebrow';
@@ -10,6 +11,8 @@ const HERO_IMAGE =
   'https://images.unsplash.com/photo-1558326567-98ae2405596b?auto=format&fit=crop&q=90&w=1800';
 
 export function Hero() {
+  const t = useTranslations('hero');
+
   return (
     <section
       id="main"
@@ -20,7 +23,7 @@ export function Hero() {
       <div className="relative aspect-[4/5] w-full overflow-hidden lg:hidden">
         <Image
           src={HERO_IMAGE}
-          alt="A stack of pastel macarons sliced to reveal their fillings"
+          alt={t('imageAlt')}
           fill
           priority
           sizes="100vw"
@@ -38,7 +41,7 @@ export function Hero() {
             className="col-span-12 py-8 lg:col-span-5 lg:py-0"
           >
             <motion.div variants={heroLift}>
-              <Eyebrow>Autumn · 2026</Eyebrow>
+              <Eyebrow>{t('eyebrow')}</Eyebrow>
             </motion.div>
 
             <motion.h1
@@ -46,25 +49,24 @@ export function Hero() {
               variants={heroLift}
               className="mt-6 font-display text-display-xl text-espresso"
             >
-              Made by hand,
+              {t('titleLine1')}
               <br />
-              <span className="italic text-caramel">every</span> morning.
+              <span className="italic text-caramel">{t('titleEmphasis')}</span> {t('titleLine2')}
             </motion.h1>
 
             <motion.p
               variants={heroLift}
               className="mt-8 max-w-md text-body-lg text-mocha"
             >
-              A boutique patisserie tucked between Antonijas and Dzirnavu.
-              Macarons, cakes, and pastries baked fresh in Riga since 2013.
+              {t('description')}
             </motion.p>
 
             <motion.div variants={heroLift} className="mt-7 flex flex-wrap items-center gap-5">
               <Button variant="primary" size="lg" as="a" href="#todays-selection" showArrow>
-                Today's selection
+                {t('todaysSelection')}
               </Button>
               <Button variant="tertiary" as="a" href="/custom" showArrow>
-                Pre-order a cake
+                {t('preOrderCake')}
               </Button>
             </motion.div>
 
@@ -72,7 +74,7 @@ export function Hero() {
               variants={heroLift}
               className="mt-8 hidden items-center gap-3 text-mono-xs uppercase text-ash lg:flex"
             >
-              <span>Scroll</span>
+              <span>{t('scroll')}</span>
               <span className="h-px w-7 bg-ash" aria-hidden="true" />
             </motion.div>
           </motion.div>
@@ -86,7 +88,7 @@ export function Hero() {
           >
             <Image
               src={HERO_IMAGE}
-              alt="A stack of pastel macarons sliced to reveal their fillings"
+              alt={t('imageAlt')}
               fill
               priority
               sizes="(min-width: 1024px) 58vw, 100vw"
@@ -95,7 +97,7 @@ export function Hero() {
             {/* Editorial caption — bottom-right, small */}
             <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end p-6">
               <span className="bg-ivory/90 px-3 py-1.5 text-mono-xs uppercase text-espresso backdrop-blur-sm">
-                Macarons · 12 flavors
+                {t('caption')}
               </span>
             </div>
           </motion.div>

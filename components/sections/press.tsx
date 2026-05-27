@@ -1,11 +1,11 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import { Eyebrow } from '@/components/ui/eyebrow';
 import { Reveal } from '@/components/ui/reveal';
 import { Ornament } from '@/components/ui/ornament';
-import { press } from '@/lib/content';
 import { staggerContainer, fadeUp, viewportOnce } from '@/lib/motion';
 
 // Decorative laurel — drawn inline so it inherits color and scales crisply
@@ -44,7 +44,11 @@ function Laurel({ className }: { className?: string }) {
   );
 }
 
+const PRESS_ITEMS = ['google', 'riga', 'local'] as const;
+
 export function Press() {
+  const t = useTranslations('press');
+
   return (
     <section
       className="section-y bg-ivory"
@@ -53,13 +57,13 @@ export function Press() {
       <div className="page-gutter mx-auto max-w-content">
         <Reveal>
           <div className="flex flex-col items-center text-center">
-            <Eyebrow>Press & recognition</Eyebrow>
+            <Eyebrow>{t('eyebrow')}</Eyebrow>
             <h2
               id="press-heading"
               className="mt-5 max-w-2xl font-display text-display-md text-espresso"
             >
-              A small <span className="italic">jewel of a patisserie</span>,
-              quietly making a name.
+              {t('titlePrefix')} <span className="italic">{t('titleEmphasis')}</span>,
+              {' '}{t('titleSuffix')}
             </h2>
             <Ornament className="mt-6" />
           </div>
@@ -73,14 +77,14 @@ export function Press() {
           viewport={viewportOnce}
           className="mt-20 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-8 lg:gap-16"
         >
-          {press.map((item, index) => (
+          {PRESS_ITEMS.map((item, index) => (
             <motion.li
-              key={item.label}
+              key={item}
               variants={fadeUp}
               className="flex flex-col items-center text-center"
             >
               {index === 0 ? (
-                <div className="flex items-center gap-1 text-caramel" aria-label="4.7 out of 5 stars">
+                <div className="flex items-center gap-1 text-caramel" aria-label={t('ratingLabel')}>
                   {[0, 1, 2, 3].map((i) => (
                     <Star key={i} className="size-4 fill-current" strokeWidth={0} aria-hidden="true" />
                   ))}
@@ -91,15 +95,15 @@ export function Press() {
               )}
 
               <p className="mt-4 text-mono-xs uppercase tracking-wider text-caramel">
-                {item.label}
+                {t(`items.${item}.label`)}
               </p>
 
               <blockquote className="mt-6 max-w-xs font-display italic text-display-sm text-espresso">
-                &ldquo;{item.quote}&rdquo;
+                &ldquo;{t(`items.${item}.quote`)}&rdquo;
               </blockquote>
 
               <p className="mt-6 text-mono-sm uppercase text-mocha">
-                — {item.source}
+                - {t(`items.${item}.source`)}
               </p>
             </motion.li>
           ))}
