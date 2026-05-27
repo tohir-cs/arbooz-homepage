@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ease-out-slow: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quick: cubic-bezier(0.33, 1, 0.68, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ivory text-espresso font-sans antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  ::selection {
+    background: #C68A4F;
+    color: #FAF6F0;
+  }
+
+  /* Editorial display uses Fraunces with refined optical sizing */
+  .font-display {
+    font-optical-sizing: auto;
+    font-variation-settings: 'opsz' 96, 'SOFT' 30, 'WONK' 0;
+  }
+
+  /* Remove default focus, add our own that matches the brand */
+  *:focus {
+    outline: none;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #C68A4F;
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Page gutter — responsive horizontal padding matching spacing system
+     mobile 24px · tablet 48px · desktop 80px */
+  .page-gutter {
+    @apply px-[24px] md:px-[48px] lg:px-[80px];
+  }
+
+  /* Section vertical padding — mobile 80 · tablet 112 · desktop 160 */
+  .section-y {
+    @apply py-[80px] md:py-[112px] lg:py-[160px];
+  }
+
+  .section-y-tight {
+    @apply py-[64px] md:py-[96px] lg:py-[128px];
+  }
+
+  /* Hairline divider */
+  .hairline {
+    @apply border-whisper;
+    border-top-width: 0.5px;
+  }
+
+  /* Editorial caramel ornament divider used between sections */
+  .ornament-divider {
+    @apply mx-auto my-8 block h-4 w-6 text-caramel;
+  }
+
+  /* Subtle film grain overlay — invisible until you remove it */
+  .grain-overlay::before {
+    content: '';
+    position: fixed;
+    inset: -50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.035;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation: grain 8s steps(10) infinite;
+  }
+
+  /* Animated underline reveal — used on tertiary buttons and nav links */
+  .underline-reveal {
+    position: relative;
+  }
+
+  .underline-reveal::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 300ms var(--ease-out-slow);
+  }
+
+  .underline-reveal:hover::after,
+  .underline-reveal:focus-visible::after {
+    width: 100%;
+  }
+
+  /* Nav link with caramel active state */
+  .nav-link {
+    @apply relative text-mono-sm uppercase text-espresso transition-colors duration-quick ease-out-slow;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background: #C68A4F;
+    transition: width 300ms var(--ease-out-slow);
+  }
+
+  .nav-link:hover {
+    color: #C68A4F;
+  }
+
+  .nav-link:hover::after,
+  .nav-link[data-active='true']::after {
+    width: 16px;
+  }
+}
+
+@layer utilities {
+  /* Editorial number marker — circled or hung in caramel */
+  .marker-caramel {
+    color: #C68A4F;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Used for accessibility — visually hidden but reachable */
+  .sr-only-focusable:not(:focus):not(:focus-within) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Honor user preference — collapse motion to opacity only */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 200ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    .animate-ken-burns {
+      animation: none !important;
+    }
+  }
+}
