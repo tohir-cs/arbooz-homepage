@@ -1,7 +1,4 @@
-import { Navbar } from '@/components/layout/navbar';
-import { MobileNav } from '@/components/layout/mobile-nav';
-import { Footer } from '@/components/layout/footer';
-import { MobileOrderBar } from '@/components/layout/mobile-order-bar';
+import { PageShell } from '@/components/layout/page-shell';
 import { Hero } from '@/components/sections/hero';
 import { TodaysSelection } from '@/components/sections/todays-selection';
 import { Categories } from '@/components/sections/categories';
@@ -14,11 +11,8 @@ import { Newsletter } from '@/components/sections/newsletter';
 
 export function HomePage() {
   return (
-    <>
-      <Navbar />
-      <MobileNav />
-
-      <main>
+    <PageShell transparentNav>
+      <main id="main">
         <Hero />
         <TodaysSelection />
         <Categories />
@@ -29,12 +23,6 @@ export function HomePage() {
         <InstagramStrip />
         <Newsletter />
       </main>
-
-      <div id="site-footer">
-        <Footer />
-      </div>
-
-      <MobileOrderBar />
-    </>
+    </PageShell>
   );
 }

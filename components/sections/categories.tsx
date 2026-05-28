@@ -1,16 +1,21 @@
 'use client';
 
 import Image from 'next/image';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Eyebrow } from '@/components/ui/eyebrow';
 import { Reveal } from '@/components/ui/reveal';
+import { Link } from '@/i18n/navigation';
 import { categories } from '@/lib/content';
 import { staggerContainer, fadeUp, viewportOnce } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 
 type Category = (typeof categories)[number];
+
+// Wrap next-intl's Link in a motion component so we keep SPA navigation
+// (no full-page reload) while still applying the fade-up reveal variant.
+const MotionLink = motion(Link);
 
 function CategoryTile({
   category,
@@ -23,23 +28,23 @@ function CategoryTile({
 }) {
   const t = useTranslations(`categories.${category.id}`);
   const tCategories = useTranslations('categories');
-  const locale = useLocale();
 
   return (
-    <motion.a
-      href={`/${locale}${category.href}`}
+    <MotionLink
+      href={category.href}
       variants={fadeUp}
-      className={cn(
-        'group relative block overflow-hidden bg-bone',
-        className
-      )}
+      className={cn('group relative block overflow-hidden bg-bone', className)}
       aria-label={tCategories('browse', { name: t('name') })}
     >
       <Image
         src={category.image}
         alt={t('imageAlt')}
         fill
-        sizes={category.span === 'large' ? '(min-width: 1024px) 58vw, 100vw' : '(min-width: 1024px) 38vw, 100vw'}
+        sizes={
+          category.span === 'large'
+            ? '(min-width: 1024px) 58vw, 100vw'
+            : '(min-width: 1024px) 38vw, 100vw'
+        }
         className="object-cover transition-transform duration-luxe ease-out-slow group-hover:scale-[1.04]"
       />
 
@@ -51,14 +56,12 @@ function CategoryTile({
 
       <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-7 lg:p-8">
         <div className="flex items-end justify-between gap-4">
-          <div>
-            <span className="block text-mono-xs uppercase text-ivory/70">
-              0{index + 1}
-            </span>
-            <h3 className="mt-2 font-display text-display-md text-ivory">
+          <div className="min-w-0">
+            <span className="block text-mono-xs uppercase text-ivory/70">0{index + 1}</span>
+            <h3 className="mt-2 font-display text-display-md text-ivory [text-wrap:balance]">
               {t('name')}
             </h3>
-            <p className="mt-2 max-w-xs text-body-md text-ivory/75">
+            <p className="mt-2 max-w-xs text-body-md text-ivory/75 [text-wrap:pretty]">
               {t('accent')}
             </p>
           </div>
@@ -71,15 +74,12 @@ function CategoryTile({
           </span>
         </div>
       </div>
-    </motion.a>
+    </MotionLink>
   );
 }
 
 export function Categories() {
   const t = useTranslations('categories');
-  // Asymmetric grid pattern: 7+5 then 5+7
-  // Macarons (large) + Cupcakes (small)
-  // Cakes (small) + Pastries (large)
   return (
     <section className="section-y bg-bone/40" aria-labelledby="categories-heading">
       <div className="page-gutter mx-auto max-w-content">
@@ -89,7 +89,7 @@ export function Categories() {
               <Eyebrow>{t('eyebrow')}</Eyebrow>
               <h2
                 id="categories-heading"
-                className="mt-5 font-display text-display-lg text-espresso"
+                className="mt-5 font-display text-display-lg text-espresso [text-wrap:balance]"
               >
                 {t('titleLine1')}
                 <br />
@@ -99,9 +99,7 @@ export function Categories() {
               </h2>
             </div>
             <div className="col-span-12 lg:col-span-4">
-              <p className="text-body-md text-mocha">
-                {t('description')}
-              </p>
+              <p className="text-body-md text-mocha [text-wrap:pretty]">{t('description')}</p>
             </div>
           </div>
         </Reveal>
@@ -113,7 +111,6 @@ export function Categories() {
           viewport={viewportOnce}
           className="mt-16 grid grid-cols-12 gap-4 md:gap-6 lg:mt-24 lg:gap-8"
         >
-          {/* Row 1: Macarons (7) + Cupcakes (5) */}
           <CategoryTile
             category={categories[0]}
             index={0}
@@ -124,7 +121,6 @@ export function Categories() {
             index={1}
             className="col-span-12 aspect-[3/4] md:col-span-5 md:aspect-[5/6]"
           />
-          {/* Row 2: Cakes (5) + Pastries (7) */}
           <CategoryTile
             category={categories[2]}
             index={2}

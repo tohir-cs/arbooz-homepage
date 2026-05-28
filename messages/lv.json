@@ -26,7 +26,8 @@
     "subscribe": "Pierakstities",
     "emailAddress": "E-pasts",
     "yourEmail": "your@email.com",
-    "externalPost": "Skatit Instagram ierakstu {index}: {alt}"
+    "externalPost": "Skatit Instagram ierakstu {index}: {alt}",
+    "newsletterSuccess": "Paldies — tiekamies virtuvē."
   },
   "hero": {
     "eyebrow": "Rudens · 2026",
@@ -252,5 +253,168 @@
     "label": "Atra pasutisana",
     "wolt": "Pasutit Wolt",
     "cake": "Ieprieks pasutit kuku"
+  },
+  "pages": {
+    "desserts": {
+      "metaTitle": "Deserti",
+      "metaDescription": "Makaroni, tortes, kēksiņi, konditorejas izstrādājumi un saldumi — svaigi cepti katru rītu Rīgā.",
+      "eyebrow": "Lete",
+      "title": "Viss, ko mēs gatavojam,",
+      "titleEmphasis": "ar rokām",
+      "titleSuffix": ".",
+      "description": "Divpadsmit makaronu garšas, slāņainas tortes, kēksiņi, konditorejas izstrādājumi un nelieli saldumi. Piedāvājums mainās līdz ar sezonu; šī ir pilnā kolekcija.",
+      "browse": "Apskatīt",
+      "ctaEyebrow": "Nevarat izvēlēties?",
+      "ctaTitle": "Apciemojiet leti.",
+      "ctaDescription": "Piedāvājums mainās katru dienu. Apmeklējiet mūs Dzirnavu ielā vai pasūtiet kasti iepriekš.",
+      "ctaPrimary": "Plānot apmeklējumu",
+      "ctaSecondary": "Pasūtīt kasti"
+    },
+    "category": {
+      "metaDescription": "Sīkāk par kategoriju",
+      "eyebrow": "Kolekcija",
+      "intro": "Tuvāk iepazīstiet kategoriju",
+      "ctaEyebrow": "Pasūtiet iepriekš",
+      "ctaTitle": "Rezervējiet sev.",
+      "ctaDescription": "Rakstiet mums, lai atliktu kasti, vai apmeklējiet leti Dzirnavu ielā, kamēr vēl ir pieejams.",
+      "ctaPrimary": "Apmeklēt mūs",
+      "ctaSecondary": "Rakstīt WhatsApp",
+      "notFound": "Šāda kolekcija neeksistē"
+    },
+    "custom": {
+      "metaTitle": "Tortes pēc pasūtījuma",
+      "metaDescription": "Īpašas svētku tortes, gatavotas ar rokām Rīgā. Kāzas, dzimšanas dienas un īpaši gadījumi.",
+      "eyebrow": "Pēc pasūtījuma",
+      "title": "Tortes",
+      "titleEmphasis": "svarīgākajiem",
+      "titleSuffix": "mirkļiem.",
+      "description": "Katru svētku torti veidojam kopā ar jums un gatavojam ar rokām. No klusām dzimšanas dienām līdz kāzām — viss personīgi un pēc sezonas.",
+      "stepsEyebrow": "Kā tas notiek",
+      "stepsTitle": "No pirmā vārda līdz pirmajam gabaliņam.",
+      "step1Title": "Pastāstiet mums",
+      "step1Body": "Dalieties ar notikumu, viesu skaitu, iemīļotajām garšām un iedvesmu. Vislabāk nedēļu vai divas iepriekš.",
+      "step2Title": "Mēs izstrādājam",
+      "step2Body": "Piedāvājam dizainu, garšas profilu un tāmi. Kopā pilnveidojam, līdz viss šķiet ideāli.",
+      "step3Title": "Mēs cepam",
+      "step3Body": "Jūsu torte tiek gatavota svaiga dienas pirms notikuma, nekad nav saldēta un gatava saņemšanai.",
+      "detailsEyebrow": "Noderīgi zināt",
+      "detailsTitle": "Galvenais.",
+      "detail1Label": "Termiņš",
+      "detail1Value": "Viena līdz divas nedēļas lielākajai daļai tortu; ilgāk kāzām.",
+      "detail2Label": "No",
+      "detail2Value": "60 €, atkarībā no izmēra, kārtām un detaļām.",
+      "detail3Label": "Saņemšana",
+      "detail3Value": "Saņemt butikā Dzirnavu ielā, no otrdienas līdz sestdienai.",
+      "detail4Label": "Diēta",
+      "detail4Value": "Bezglutēna un ar samazinātu cukura daudzumu — pēc pieprasījuma.",
+      "ctaEyebrow": "Kad esat gatavs",
+      "ctaTitle": "Izveidosim jūsu torti.",
+      "ctaDescription": "Atsūtiet notikumu un datumu. Atbildēsim dienas laikā ar idejām un tāmi.",
+      "ctaPrimary": "Sākt WhatsApp",
+      "ctaSecondary": "Rakstīt Karinai"
+    },
+    "story": {
+      "metaTitle": "Mūsu stāsts",
+      "metaDescription": "Kā Arbooz no mājas virtuves 2013. gadā izauga par Rīgas konditoreju, kas pārstāvēja pilsētu Eiropas kultūras galvaspilsētā.",
+      "eyebrow": "Kopš 2013. gada",
+      "title": "Hobijs, kas kļuva par",
+      "titleEmphasis": "dzīvi",
+      "titleSuffix": ".",
+      "description": "Arbooz sākās ar Karinas eksperimentiem mājas virtuvē un klusi izauga par vienu no Rīgas iemīļotākajām mazajām konditorejām.",
+      "body1Eyebrow": "Sākums",
+      "body1Title": "2013. gada 4. jūnijs.",
+      "body1Text": "Karina atvēra mazu leti starp Antonijas un Dzirnavu ielām ar duci makaronu garšu un pārliecību, ka visam jābūt gatavotam ar rokām, katru rītu. Tas nekad nav mainījies.",
+      "body2Eyebrow": "Atzinība",
+      "body2Title": "Pilsētas izvēle.",
+      "body2Text": "2014. gadā Arbooz tika izvēlēts kā viens no divpadsmit zīmoliem, kas pārstāvēja Rīgu Eiropas kultūras galvaspilsētas gadā — kluss gods, ko komanda joprojām augstu vērtē.",
+      "body3Eyebrow": "Šodien",
+      "body3Title": "Tās pašas rokas.",
+      "body3Text": "Vairāk nekā desmit gadus vēlāk rituāls ir nemainīgs: sezonas izvēlne, lete, kas sakārtota pirms vienpadsmitiem, un telpa, kas smaržo pēc sviesta un mandelēm.",
+      "quote": "Es esmu virtuvē katru rītu pirms butika atvēršanas, un es to nemainītu ne pret ko.",
+      "quoteAuthor": "Karina Krasoviča",
+      "quoteRole": "Dibinātāja un konditore",
+      "ctaEyebrow": "Nāciet ciemos",
+      "ctaTitle": "Atrodiet mūs Dzirnavu ielā.",
+      "ctaDescription": "Esam atvērti no otrdienas līdz sestdienai. Nāciet pēc kafijas un makarona vai palieciet uz tortes gabaliņu.",
+      "ctaPrimary": "Plānot apmeklējumu",
+      "ctaSecondary": "Skatīt desertus"
+    },
+    "visit": {
+      "metaTitle": "Apmeklēt",
+      "metaDescription": "Atrodiet Arbooz Dzirnavu ielā 34A Rīgā. Darba laiks, maršruts un kontakti.",
+      "eyebrow": "Kur mēs esam",
+      "title": "Desmit vietas un lete,",
+      "titleEmphasis": "paslēptas",
+      "titleSuffix": "centrā.",
+      "description": "Mēs esam Dzirnavu ielā, dažu minūšu gājienā no pilsētas kanāla. Ienāciet pēc kafijas vai paņemiet pasūtīto kasti."
+    },
+    "journal": {
+      "metaTitle": "Žurnāls",
+      "metaDescription": "Piezīmes no Arbooz virtuves — sezonas izvēlnes, tehnikas un kāda reta recepte.",
+      "eyebrow": "No virtuves",
+      "title": "Piezīmes",
+      "titleEmphasis": "no virtuves",
+      "titleSuffix": ".",
+      "description": "Laiku pa laikam rakstām par to, ko cepam, kas ir sezonā, un par sīkumiem, kas desertu no laba padara neaizmirstamu.",
+      "comingSoon": "Pirmie ieraksti drīzumā",
+      "entry1Title": "Kāpēc mēs mainām izvēlni katru sezonu",
+      "entry1Excerpt": "Piezīme par to, kāpēc trīs iecienītākie katru sezonu aiziet — un trīs jauni ieņem to vietu.",
+      "entry1Date": "Pavasaris 2026",
+      "entry2Title": "Zemeņu un baziliku aizstāvībai",
+      "entry2Excerpt": "Mūsu firmas makaronu kombinācija kopš 2014. gada un kā tā radās gandrīz nejauši.",
+      "entry2Date": "Pavasaris 2026",
+      "entry3Title": "Rīts pie letes",
+      "entry3Excerpt": "Kas notiek starp pieciem un vienpadsmitiem, pirms ierodas pirmais viesis.",
+      "entry3Date": "Ziema 2025",
+      "ctaEyebrow": "Sekojiet līdzi",
+      "ctaTitle": "Saņemiet sezonas piezīmi.",
+      "ctaDescription": "Rakstām ne biežāk kā reizi mēnesī — jaunas izvēlnes, virtuves piezīmes un kāda reta recepte.",
+      "ctaPrimary": "Skatīt desertus",
+      "ctaSecondary": "Apmeklēt mūs"
+    },
+    "simple": {
+      "press": {
+        "metaTitle": "Prese",
+        "eyebrow": "Prese un atzinība",
+        "title": "Ko par mums saka.",
+        "description": "Neliela pieminējumu un atsauksmju izlase. Preses jautājumos rakstiet uz karina@arbooz.lv."
+      },
+      "contact": {
+        "metaTitle": "Kontakti",
+        "eyebrow": "Sazināties",
+        "title": "Sasveicinieties.",
+        "description": "Pasūtījumiem, jautājumiem vai presei — WhatsApp ir ātrākais, bet e-pasts un tālrunis vienmēr ir pieejami."
+      },
+      "allergens": {
+        "metaTitle": "Alergēni",
+        "eyebrow": "Noderīgi zināt",
+        "title": "Alergēni un sastāvs.",
+        "description": "Mūsu virtuve strādā ar riekstiem, glutēnu, piena produktiem un olām. Pirms pasūtīšanas, lūdzu, jautājiet klātienē vai pa tālruni par konkrētas pozīcijas sastāvu."
+      },
+      "privacy": {
+        "metaTitle": "Privātums",
+        "eyebrow": "Juridiskā informācija",
+        "title": "Privātuma politika.",
+        "description": "Mēs vācam tikai to, kas nepieciešams jūsu pasūtījuma pieņemšanai un atbildēm uz ziņām. Mēs nekad nepārdodam jūsu datus. Pilna politika pieejama pēc pieprasījuma."
+      },
+      "terms": {
+        "metaTitle": "Noteikumi",
+        "eyebrow": "Juridiskā informācija",
+        "title": "Pakalpojumu noteikumi.",
+        "description": "Pasūtījumu, saņemšanas un atcelšanas noteikumi. Tortēm pēc pasūtījuma nepieciešama priekšapmaksa. Pilni noteikumi pieejami pēc pieprasījuma."
+      },
+      "giftcards": {
+        "metaTitle": "Dāvanu kastes un kartes",
+        "eyebrow": "Dāvināšanai",
+        "title": "Makaronu kastes un dāvanu kartes.",
+        "description": "Sešu vai divpadsmit makaronu kastes ir vienkārša dāvana, un dāvanu kartes var izmantot jebkam pie letes. Pajautājiet veikalā vai rakstiet mums."
+      }
+    }
+  },
+  "notFound": {
+    "eyebrow": "Pazaudēts pavediens",
+    "title": "Šī lapa ir pazudusi.",
+    "description": "Saite varētu būt novecojusi, vai mēs noņēmām lapu no izvēlnes. Atgriezīsimies sākumā.",
+    "cta": "Uz sākumu"
   }
 }

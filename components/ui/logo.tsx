@@ -8,14 +8,22 @@ type LogoProps = {
 
 /**
  * Recreated ARBOOZ wordmark — narrow, hand-drawn character with stretched
- * verticals. Inline SVG so it inherits color and crisp at any size.
+ * verticals. Inline SVG so it inherits color and stays crisp at any size.
+ *
+ * Tagline crossfades via opacity + max-height instead of conditional render
+ * so the parent flex container's vertical center never jumps. Used by the
+ * desktop navbar where the header height transitions 96 → 72px on scroll.
  */
 export function Logo({ className, tone = 'espresso', withTagline = true }: LogoProps) {
   const colorClass = tone === 'ivory' ? 'text-ivory' : 'text-espresso';
 
   return (
     <span
-      className={cn('inline-flex flex-col items-center leading-none', colorClass, className)}
+      className={cn(
+        'inline-flex flex-col items-center justify-center leading-none',
+        colorClass,
+        className
+      )}
       aria-label="Arbooz — Handmade Confections"
     >
       <svg
@@ -23,6 +31,7 @@ export function Logo({ className, tone = 'espresso', withTagline = true }: LogoP
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="h-auto w-full"
+        preserveAspectRatio="xMidYMid meet"
         role="img"
         aria-hidden="true"
       >
@@ -67,11 +76,18 @@ export function Logo({ className, tone = 'espresso', withTagline = true }: LogoP
           fill="none"
         />
       </svg>
-      {withTagline && (
-        <span className="mt-2 text-mono-xs uppercase tracking-[0.32em] opacity-80">
-          Handmade Confections
-        </span>
-      )}
+
+      {/* Tagline — always in the DOM; visibility is purely CSS. */}
+      <span
+        className={cn(
+          'overflow-hidden text-center tracking-[0.32em] text-mono-xs uppercase',
+          'transition-[opacity,max-height,margin-top] duration-base ease-out-slow',
+          withTagline ? 'mt-2 max-h-4 opacity-80' : 'mt-0 max-h-0 opacity-0'
+        )}
+        aria-hidden={!withTagline}
+      >
+        Handmade Confections
+      </span>
     </span>
   );
 }

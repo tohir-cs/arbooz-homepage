@@ -26,7 +26,8 @@
     "subscribe": "Subscribe",
     "emailAddress": "Email address",
     "yourEmail": "your@email.com",
-    "externalPost": "View Instagram post {index}: {alt}"
+    "externalPost": "View Instagram post {index}: {alt}",
+    "newsletterSuccess": "Thank you — see you in the kitchen."
   },
   "hero": {
     "eyebrow": "Autumn · 2026",
@@ -252,5 +253,168 @@
     "label": "Quick order",
     "wolt": "Order on Wolt",
     "cake": "Pre-order a Cake"
+  },
+  "pages": {
+    "desserts": {
+      "metaTitle": "Desserts",
+      "metaDescription": "Macarons, cakes, cupcakes, pastries and sweets — baked fresh each morning in Riga.",
+      "eyebrow": "The counter",
+      "title": "Everything we make,",
+      "titleEmphasis": "by hand",
+      "titleSuffix": ".",
+      "description": "Twelve macaron flavors, layered cakes, cupcakes, pastries and small sweets. The selection shifts with the season; this is the full collection.",
+      "browse": "Browse",
+      "ctaEyebrow": "Can’t decide?",
+      "ctaTitle": "Come see the counter.",
+      "ctaDescription": "The full selection changes daily. Visit us on Dzirnavu, or pre-order a box to collect.",
+      "ctaPrimary": "Plan your visit",
+      "ctaSecondary": "Pre-order a box"
+    },
+    "category": {
+      "metaDescription": "Explore our",
+      "eyebrow": "Collection",
+      "intro": "A closer look at the",
+      "ctaEyebrow": "Order ahead",
+      "ctaTitle": "Reserve yours for collection.",
+      "ctaDescription": "Message us to set aside a box, or visit the counter on Dzirnavu while they last.",
+      "ctaPrimary": "Visit us",
+      "ctaSecondary": "Message on WhatsApp",
+      "notFound": "That collection doesn’t exist"
+    },
+    "custom": {
+      "metaTitle": "Custom Cakes",
+      "metaDescription": "Bespoke celebration cakes made by hand in Riga. Weddings, birthdays, and special occasions.",
+      "eyebrow": "Bespoke",
+      "title": "Cakes for the",
+      "titleEmphasis": "occasions",
+      "titleSuffix": "that matter.",
+      "description": "Every celebration cake is designed with you and made by hand. From intimate birthdays to weddings, we keep it personal and seasonal.",
+      "stepsEyebrow": "How it works",
+      "stepsTitle": "From first note to first slice.",
+      "step1Title": "Tell us about it",
+      "step1Body": "Share the occasion, guest count, flavors you love, and any inspiration. A week or two of notice is ideal.",
+      "step2Title": "We design it",
+      "step2Body": "We propose a design, flavor profile, and quote. We refine together until it feels right.",
+      "step3Title": "We bake it",
+      "step3Body": "Your cake is made fresh in the days before your event, never frozen, and ready for collection.",
+      "detailsEyebrow": "Good to know",
+      "detailsTitle": "The essentials.",
+      "detail1Label": "Lead time",
+      "detail1Value": "One to two weeks for most cakes; longer for weddings.",
+      "detail2Label": "From",
+      "detail2Value": "€60, depending on size, tiers, and detail.",
+      "detail3Label": "Collection",
+      "detail3Value": "Collect at the boutique on Dzirnavu, Tuesday to Saturday.",
+      "detail4Label": "Dietary",
+      "detail4Value": "Gluten-free and reduced-sugar options on request.",
+      "ctaEyebrow": "Ready when you are",
+      "ctaTitle": "Let’s design your cake.",
+      "ctaDescription": "Send us the occasion and a date. We’ll reply within a day with ideas and a quote.",
+      "ctaPrimary": "Start on WhatsApp",
+      "ctaSecondary": "Email Karina"
+    },
+    "story": {
+      "metaTitle": "Our Story",
+      "metaDescription": "How Arbooz grew from a home kitchen in 2013 into a Riga patisserie representing the city at the European Capital of Culture.",
+      "eyebrow": "Since 2013",
+      "title": "A hobby that became",
+      "titleEmphasis": "a life",
+      "titleSuffix": ".",
+      "description": "Arbooz began as Karina’s home-kitchen experiments and grew, quietly, into one of Riga’s most loved small patisseries.",
+      "body1Eyebrow": "The beginning",
+      "body1Title": "June 4th, 2013.",
+      "body1Text": "Karina opened a small counter between Antonijas and Dzirnavu with a dozen macaron flavors and a conviction that everything should be made by hand, every morning. That has never changed.",
+      "body2Eyebrow": "Recognition",
+      "body2Title": "A city’s pick.",
+      "body2Text": "In 2014 Arbooz was selected as one of twelve brands to represent Riga during its year as European Capital of Culture — a quiet honor the team still holds close.",
+      "body3Eyebrow": "Today",
+      "body3Title": "The same hands.",
+      "body3Text": "More than a decade on, the ritual is unchanged: a seasonal menu, a counter arranged before eleven, and a room that smells of butter and almond.",
+      "quote": "I am in the kitchen every morning before the boutique opens, and I would not have it any other way.",
+      "quoteAuthor": "Karina Krasovitskaya",
+      "quoteRole": "Founder & pastry chef",
+      "ctaEyebrow": "Come say hello",
+      "ctaTitle": "Find us on Dzirnavu.",
+      "ctaDescription": "We’re open Tuesday to Saturday. Come for a coffee and a macaron, or stay for a slice.",
+      "ctaPrimary": "Plan your visit",
+      "ctaSecondary": "See the desserts"
+    },
+    "visit": {
+      "metaTitle": "Visit",
+      "metaDescription": "Find Arbooz at Dzirnavu 34A in Riga. Opening hours, directions, and contact details.",
+      "eyebrow": "Find us",
+      "title": "Ten seats and a counter,",
+      "titleEmphasis": "tucked away",
+      "titleSuffix": ".",
+      "description": "We’re on Dzirnavu, a short walk from the city canal. Come in for a coffee, or collect a pre-ordered box."
+    },
+    "journal": {
+      "metaTitle": "Journal",
+      "metaDescription": "Notes from the Arbooz kitchen — seasonal menus, techniques, and the occasional recipe.",
+      "eyebrow": "From the kitchen",
+      "title": "Notes from",
+      "titleEmphasis": "the kitchen",
+      "titleSuffix": ".",
+      "description": "Occasional writing on what we’re baking, what’s in season, and the small details that take a dessert from good to memorable.",
+      "comingSoon": "First entries, coming soon",
+      "entry1Title": "Why we change the menu every season",
+      "entry1Excerpt": "A note on why three favorites retire each season — and three new ones take their place.",
+      "entry1Date": "Spring 2026",
+      "entry2Title": "The case for strawberry and basil",
+      "entry2Excerpt": "Our signature macaron pairing since 2014, and how it came about almost by accident.",
+      "entry2Date": "Spring 2026",
+      "entry3Title": "A morning at the counter",
+      "entry3Excerpt": "What happens between five and eleven, before the first customer arrives.",
+      "entry3Date": "Winter 2025",
+      "ctaEyebrow": "Stay in the loop",
+      "ctaTitle": "Get the seasonal note.",
+      "ctaDescription": "We write once a month at most — new menus, kitchen notes, and the occasional recipe.",
+      "ctaPrimary": "See the desserts",
+      "ctaSecondary": "Visit us"
+    },
+    "simple": {
+      "press": {
+        "metaTitle": "Press",
+        "eyebrow": "Press & recognition",
+        "title": "What they’re saying.",
+        "description": "A small selection of mentions and reviews. For press enquiries, write to karina@arbooz.lv."
+      },
+      "contact": {
+        "metaTitle": "Contact",
+        "eyebrow": "Get in touch",
+        "title": "Say hello.",
+        "description": "For orders, questions, or press — WhatsApp is fastest, but email and phone are always open."
+      },
+      "allergens": {
+        "metaTitle": "Allergens",
+        "eyebrow": "Good to know",
+        "title": "Allergens & ingredients.",
+        "description": "Our kitchen handles nuts, gluten, dairy, and eggs. Please ask in person or by phone for the specifics of any item before ordering."
+      },
+      "privacy": {
+        "metaTitle": "Privacy",
+        "eyebrow": "Legal",
+        "title": "Privacy policy.",
+        "description": "We collect only what we need to take your order and reply to your messages. We never sell your data. Full policy available on request."
+      },
+      "terms": {
+        "metaTitle": "Terms",
+        "eyebrow": "Legal",
+        "title": "Terms of service.",
+        "description": "Orders, collection, and cancellation terms. Custom cakes require a deposit. Full terms available on request."
+      },
+      "giftcards": {
+        "metaTitle": "Gift Boxes & Cards",
+        "eyebrow": "For gifting",
+        "title": "Macaron boxes & gift cards.",
+        "description": "Boxes of six or twelve macarons make an easy gift, and gift cards can be used on anything at the counter. Ask in store or message us to arrange."
+      }
+    }
+  },
+  "notFound": {
+    "eyebrow": "Lost the thread",
+    "title": "This page has gone missing.",
+    "description": "The link may be outdated, or we've taken the page off the menu. Let's head back to the start.",
+    "cta": "Back home"
   }
 }

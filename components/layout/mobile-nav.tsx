@@ -9,6 +9,7 @@ import { LanguageSwitcher } from './language-switcher';
 import { Eyebrow } from '@/components/ui/eyebrow';
 import { Ornament } from '@/components/ui/ornament';
 import { Link } from '@/i18n/navigation';
+import { externalLinks, externalLinkProps } from '@/lib/links';
 import { cn } from '@/lib/utils';
 import { easings, durations } from '@/lib/motion';
 
@@ -18,12 +19,12 @@ const NAV_LINKS = [
   { labelKey: 'ourStory', href: '/story' },
   { labelKey: 'visit', href: '/visit' },
   { labelKey: 'journal', href: '/journal' },
-];
+] as const;
 
 const SECONDARY = [
-  { labelKey: 'orderOnWolt', href: 'https://wolt.com', external: true },
-  { labelKey: 'whatsApp', href: 'https://wa.me/37126530164', external: true },
-];
+  { labelKey: 'orderOnWolt', href: externalLinks.wolt },
+  { labelKey: 'whatsApp', href: externalLinks.whatsapp },
+] as const;
 
 export function MobileNav({ transparent = true }: { transparent?: boolean }) {
   const t = useTranslations('nav');
@@ -62,28 +63,28 @@ export function MobileNav({ transparent = true }: { transparent?: boolean }) {
 
   return (
     <>
-      {/* Bar */}
+      {/* Mobile header bar */}
       <header
         className={cn(
           'fixed inset-x-0 top-0 z-40 h-16 lg:hidden',
           'transition-all duration-base ease-out-slow',
           isElevated || open
-            ? 'bg-ivory/90 backdrop-blur-md border-b border-whisper/60'
+            ? 'bg-ivory/95 backdrop-blur-md border-b border-whisper/60'
             : 'bg-transparent'
         )}
       >
-        <div className="page-gutter mx-auto flex h-full items-center justify-between">
+        <div className="page-gutter mx-auto flex h-full items-center justify-between gap-3">
           <button
             type="button"
             onClick={() => setOpen(true)}
-            aria-label="Open menu"
+            aria-label={t('menu')}
             aria-expanded={open}
-            className="-ml-2 p-2 text-espresso"
+            className="-ml-2 flex size-11 items-center justify-center text-espresso"
           >
             <Menu strokeWidth={1.25} className="size-6" aria-hidden="true" />
           </button>
 
-          <Link href="/" aria-label={t('home')} className="block w-24">
+          <Link href="/" aria-label={t('home')} className="block w-24 shrink-0">
             <Logo withTagline={false} />
           </Link>
 
@@ -115,7 +116,8 @@ export function MobileNav({ transparent = true }: { transparent?: boolean }) {
               className="fixed inset-y-0 left-0 z-50 flex w-[88%] max-w-md flex-col bg-ivory lg:hidden"
               role="dialog"
               aria-modal="true"
-              aria-label="Site menu"
+              aria-label={t('menu')}
+              style={{ paddingTop: 'env(safe-area-inset-top)' }}
             >
               <div className="flex items-center justify-between px-6 py-5">
                 <Logo withTagline={false} className="w-24" />
@@ -123,7 +125,7 @@ export function MobileNav({ transparent = true }: { transparent?: boolean }) {
                   type="button"
                   onClick={() => setOpen(false)}
                   aria-label="Close menu"
-                  className="-mr-2 p-2 text-espresso"
+                  className="-mr-2 flex size-11 items-center justify-center text-espresso"
                 >
                   <X strokeWidth={1.25} className="size-6" aria-hidden="true" />
                 </button>
@@ -164,8 +166,7 @@ export function MobileNav({ transparent = true }: { transparent?: boolean }) {
                     <li key={link.labelKey}>
                       <a
                         href={link.href}
-                        target={link.external ? '_blank' : undefined}
-                        rel={link.external ? 'noreferrer' : undefined}
+                        {...externalLinkProps}
                         className="block text-body-md text-espresso underline-reveal w-fit"
                       >
                         {t(link.labelKey)}
@@ -175,7 +176,10 @@ export function MobileNav({ transparent = true }: { transparent?: boolean }) {
                 </ul>
               </div>
 
-              <div className="border-t border-whisper px-6 py-6">
+              <div
+                className="border-t border-whisper px-6 py-6"
+                style={{ paddingBottom: 'calc(env(safe-area-inset-bottom) + 1.5rem)' }}
+              >
                 <Eyebrow className="mb-3">{t('language')}</Eyebrow>
                 <LanguageSwitcher />
               </div>

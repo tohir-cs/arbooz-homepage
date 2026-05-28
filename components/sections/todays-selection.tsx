@@ -18,14 +18,14 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <motion.article
       variants={fadeUp}
-      className="group flex w-[78vw] shrink-0 snap-start flex-col sm:w-[46vw] lg:w-[26vw] xl:w-[320px]"
+      className="group flex w-[82vw] shrink-0 snap-start flex-col sm:w-[46vw] lg:w-[26vw] xl:w-[320px]"
     >
       <div className="relative aspect-[4/5] overflow-hidden bg-bone">
         <Image
           src={product.image}
           alt={t('imageAlt')}
           fill
-          sizes="(min-width: 1280px) 320px, (min-width: 1024px) 26vw, (min-width: 640px) 46vw, 78vw"
+          sizes="(min-width: 1280px) 320px, (min-width: 1024px) 26vw, (min-width: 640px) 46vw, 82vw"
           className="object-cover transition-transform duration-slow ease-out-slow group-hover:scale-[1.04]"
         />
         {product.tag && (
@@ -37,8 +37,12 @@ function ProductCard({ product }: { product: Product }) {
 
       <div className="mt-5">
         <Eyebrow className="text-mocha">{t('flavor')}</Eyebrow>
-        <h3 className="mt-2 font-display text-heading-lg text-espresso">{t('name')}</h3>
-        <p className="mt-2 max-w-xs text-body-sm text-mocha">{t('description')}</p>
+        {/* text-wrap:balance + hyphens:none ensures "Strawberry & Basil"
+            wraps cleanly to two lines instead of breaking mid-word. */}
+        <h3 className="mt-2 font-display text-heading-lg leading-tight text-espresso [text-wrap:balance] [hyphens:none]">
+          {t('name')}
+        </h3>
+        <p className="mt-2 text-body-sm text-mocha [text-wrap:pretty]">{t('description')}</p>
         <div className="mt-4 flex items-baseline gap-2">
           <span className="font-sans text-body-md font-medium text-espresso">{product.price}</span>
           <span className="text-mono-xs uppercase text-ash">/ {t('unit')}</span>
@@ -75,7 +79,7 @@ export function TodaysSelection() {
               <Eyebrow>{t('eyebrow')}</Eyebrow>
               <h2
                 id="todays-heading"
-                className="mt-5 font-display text-display-lg text-espresso"
+                className="mt-5 font-display text-display-lg text-espresso [text-wrap:balance]"
               >
                 {t('titlePrefix')} <span className="italic">{t('titleEmphasis')}</span> {t('titleSuffix')}
                 <br />
@@ -104,7 +108,6 @@ export function TodaysSelection() {
         </Reveal>
       </div>
 
-      {/* Scroller — extends beyond container on the right so cards bleed off-edge */}
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -114,7 +117,7 @@ export function TodaysSelection() {
       >
         <div
           ref={scrollerRef}
-          className="-mr-[24px] flex snap-x snap-mandatory gap-8 overflow-x-auto pb-4 pr-[24px] md:-mr-[48px] md:pr-[48px] lg:-mr-[80px] lg:pr-[80px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="-mr-[24px] flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 pr-[24px] md:-mr-[48px] md:gap-8 md:pr-[48px] lg:-mr-[80px] lg:pr-[80px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {todaysSelection.map((product) => (
             <ProductCard key={product.id} product={product} />

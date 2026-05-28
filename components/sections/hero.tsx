@@ -47,7 +47,7 @@ export function Hero() {
             <motion.h1
               id="hero-heading"
               variants={heroLift}
-              className="mt-6 font-display text-display-xl text-espresso"
+              className="mt-6 font-display text-display-xl text-espresso [text-wrap:balance]"
             >
               {t('titleLine1')}
               <br />
@@ -56,7 +56,7 @@ export function Hero() {
 
             <motion.p
               variants={heroLift}
-              className="mt-8 max-w-md text-body-lg text-mocha"
+              className="mt-8 max-w-md text-body-lg text-mocha [text-wrap:pretty]"
             >
               {t('description')}
             </motion.p>

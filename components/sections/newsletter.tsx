@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import { useTranslations } from 'next-intl';
 import { Eyebrow } from '@/components/ui/eyebrow';
 import { Button } from '@/components/ui/button';
@@ -13,7 +13,7 @@ export function Newsletter() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email) return;
     // In production this posts to a serverless function
@@ -36,14 +36,12 @@ export function Newsletter() {
 
             <Ornament className="mt-6" />
 
-            <p className="mt-6 max-w-md text-body-lg text-mocha">
-              {t('description')}
-            </p>
+            <p className="mt-6 max-w-md text-body-lg text-mocha">{t('description')}</p>
 
             {!submitted ? (
               <form
                 onSubmit={onSubmit}
-                className="mt-8 flex w-full max-w-lg flex-col gap-4 sm:flex-row sm:items-end"
+                className="mt-8 flex w-full max-w-lg flex-col gap-3 sm:flex-row sm:items-end sm:gap-4"
                 aria-label="Newsletter signup"
               >
                 <label className="flex-1 text-left">
@@ -53,26 +51,28 @@ export function Newsletter() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    autoComplete="email"
+                    inputMode="email"
                     placeholder={t('placeholder')}
-                    className="mt-2 w-full border-0 border-b border-espresso/30 bg-transparent pb-3 pt-2 font-sans text-body-md text-espresso placeholder:text-ash focus:border-caramel focus:outline-none"
+                    // text-[16px] avoids iOS Safari zoom-on-focus;
+                    // min-h-[56px] gives a comfortable mobile touch target
+                    className="mt-2 block w-full min-h-[56px] border-0 border-b border-espresso/30 bg-transparent pb-3 pt-2 font-sans text-[16px] sm:text-body-md text-espresso placeholder:text-ash focus:border-caramel focus:outline-none"
                   />
                 </label>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" className="w-full sm:w-auto">
                   {tCommon('subscribe')}
                 </Button>
               </form>
             ) : (
-              <div className="mt-8 max-w-md rounded-button border border-caramel/30 bg-caramel/5 px-8 py-6 text-body-md text-espresso">
-                <p className="font-display italic">{t('success')}</p>
-                <p className="mt-2 text-mono-xs uppercase text-mocha">
+              <div className="mt-8 w-full max-w-md rounded-button border border-caramel/30 bg-caramel/5 px-6 py-6 text-body-md text-espresso sm:px-8">
+                <p className="font-display italic text-display-sm text-caramel">{t('success')}</p>
+                <p className="mt-2 break-all text-mono-xs uppercase text-mocha">
                   {t('confirmation', { email })}
                 </p>
               </div>
             )}
 
-            <p className="mt-8 text-mono-xs uppercase text-ash">
-              {t('note')}
-            </p>
+            <p className="mt-8 text-mono-xs uppercase text-ash">{t('note')}</p>
           </div>
         </Reveal>
       </div>

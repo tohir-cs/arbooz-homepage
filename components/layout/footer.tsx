@@ -3,13 +3,19 @@ import { Logo } from '@/components/ui/logo';
 import { Eyebrow } from '@/components/ui/eyebrow';
 import { FooterNewsletterForm } from './footer-newsletter-form';
 import { Link } from '@/i18n/navigation';
+import { externalLinks, externalLinkProps } from '@/lib/links';
 import { visit } from '@/lib/content';
 
-const COLUMNS = [
+type FooterLink =
+  | { textKey: string; href: string }
+  | { text: string; href: string }
+  | { text: ''; href: '' };
+
+const COLUMNS: { labelKey: string; items: FooterLink[] }[] = [
   {
     labelKey: 'visit',
     items: [
-      { textKey: 'visit.address', href: 'https://maps.google.com/?q=Dzirnavu+34A+Riga' },
+      { textKey: 'visit.address', href: externalLinks.googleMaps },
       { textKey: 'visit.city', href: '' },
       { text: '', href: '' },
       { text: 'Tue–Fri  11:00–18:00', href: '' },
@@ -42,9 +48,9 @@ const COLUMNS = [
   {
     labelKey: 'connect',
     items: [
-      { textKey: 'footer.links.instagram', href: 'https://instagram.com/arbooz.lv' },
-      { textKey: 'footer.links.facebook', href: 'https://facebook.com/arbooz' },
-      { textKey: 'footer.links.whatsapp', href: 'https://wa.me/37126530164' },
+      { textKey: 'footer.links.instagram', href: externalLinks.instagram },
+      { textKey: 'footer.links.facebook', href: externalLinks.facebook },
+      { textKey: 'footer.links.whatsapp', href: externalLinks.whatsapp },
       { text: visit.phone, href: `tel:${visit.phone.replace(/\s/g, '')}` },
       { text: visit.email, href: `mailto:${visit.email}` },
     ],
@@ -55,7 +61,8 @@ export function Footer() {
   const t = useTranslations();
   return (
     <footer className="bg-espresso text-bone">
-      <div className="page-gutter mx-auto max-w-content pt-[120px] pb-[48px]">
+      {/* Bottom padding on mobile leaves room for the sticky CTA bar (56px + safe-area) */}
+      <div className="page-gutter mx-auto max-w-content pt-[120px] pb-[88px] lg:pb-[48px]">
         {/* Brand mark */}
         <div className="flex flex-col items-start gap-4">
           <Logo tone="ivory" withTagline={false} className="w-32" />
@@ -65,7 +72,7 @@ export function Footer() {
         <hr className="my-[64px] border-0 border-t border-bone/10" />
 
         {/* Columns */}
-        <div className="grid grid-cols-1 gap-[64px] sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <div className="grid grid-cols-1 gap-[48px] sm:grid-cols-2 sm:gap-[64px] lg:grid-cols-4 lg:gap-8">
           {COLUMNS.map((col) => (
             <div key={col.labelKey}>
               <Eyebrow tone="ivory" className="text-bone">
@@ -73,33 +80,43 @@ export function Footer() {
               </Eyebrow>
               <ul className="mt-5 space-y-3 text-body-sm text-ash">
                 {col.items.map((item, i) => {
-                  const text = item.textKey ? t(item.textKey) : item.text || '';
+                  const text = 'textKey' in item ? t(item.textKey) : item.text;
 
-                  return text === '' ? (
-                    <li key={i} className="h-1" aria-hidden="true" />
-                  ) : (
-                    <li key={i}>
-                      {item.href ? (
-                        item.href.startsWith('/') ? (
-                          <Link
-                            href={item.href}
-                            className="transition-colors duration-quick ease-out-slow hover:text-rose"
-                          >
-                            {text}
-                          </Link>
-                        ) : (
-                          <a
-                            href={item.href}
-                            target={item.href.startsWith('http') ? '_blank' : undefined}
-                            rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
-                            className="transition-colors duration-quick ease-out-slow hover:text-rose"
-                          >
-                            {text}
-                          </a>
-                        )
-                      ) : (
+                  if (text === '') {
+                    return <li key={i} className="h-1" aria-hidden="true" />;
+                  }
+
+                  if (!item.href) {
+                    return (
+                      <li key={i}>
                         <span>{text}</span>
-                      )}
+                      </li>
+                    );
+                  }
+
+                  if (item.href.startsWith('/')) {
+                    return (
+                      <li key={i}>
+                        <Link
+                          href={item.href}
+                          className="transition-colors duration-quick ease-out-slow hover:text-rose"
+                        >
+                          {text}
+                        </Link>
+                      </li>
+                    );
+                  }
+
+                  const isExternal = item.href.startsWith('http');
+                  return (
+                    <li key={i}>
+                      <a
+                        href={item.href}
+                        {...(isExternal ? externalLinkProps : {})}
+                        className="transition-colors duration-quick ease-out-slow hover:text-rose break-words"
+                      >
+                        {text}
+                      </a>
                     </li>
                   );
                 })}
@@ -114,9 +131,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
             <h2 className="font-display text-display-sm text-ivory">{t('footer.stayTitle')}</h2>
-            <p className="mt-3 text-body-md text-ash">
-              {t('footer.stayDescription')}
-            </p>
+            <p className="mt-3 text-body-md text-ash">{t('footer.stayDescription')}</p>
           </div>
           <FooterNewsletterForm />
         </div>

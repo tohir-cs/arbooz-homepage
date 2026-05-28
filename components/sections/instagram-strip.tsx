@@ -7,7 +7,10 @@ import { Instagram, ArrowUpRight } from 'lucide-react';
 import { Eyebrow } from '@/components/ui/eyebrow';
 import { Reveal } from '@/components/ui/reveal';
 import { instagramFeed } from '@/lib/content';
+import { externalLinks, externalLinkProps } from '@/lib/links';
 import { staggerContainer, fadeUp, viewportOnce } from '@/lib/motion';
+
+const INSTAGRAM_HANDLE = '@arbooz_cafe';
 
 export function InstagramStrip() {
   const t = useTranslations('instagram');
@@ -25,19 +28,16 @@ export function InstagramStrip() {
                 className="mt-4 font-display text-display-md text-espresso"
               >
                 <a
-                  href="https://instagram.com/arbooz.lv"
-                  target="_blank"
-                  rel="noreferrer"
+                  href={externalLinks.instagram}
+                  {...externalLinkProps}
                   className="inline-flex items-center gap-3 underline-reveal"
                 >
-                  @arbooz.lv
+                  {INSTAGRAM_HANDLE}
                   <ArrowUpRight className="size-7 text-caramel" strokeWidth={1.5} aria-hidden="true" />
                 </a>
               </h2>
             </div>
-            <p className="max-w-xs text-body-md text-mocha">
-              {t('description')}
-            </p>
+            <p className="max-w-xs text-body-md text-mocha">{t('description')}</p>
           </div>
         </Reveal>
       </div>
@@ -53,9 +53,8 @@ export function InstagramStrip() {
           <motion.a
             key={post.id}
             variants={fadeUp}
-            href="https://instagram.com/arbooz.lv"
-            target="_blank"
-            rel="noreferrer"
+            href={externalLinks.instagram}
+            {...externalLinkProps}
             aria-label={tCommon('externalPost', {
               index: index + 1,
               alt: t(`alts.${post.id}`),

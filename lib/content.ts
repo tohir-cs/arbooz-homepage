@@ -23,15 +23,22 @@ const IMG = {
   macaronBox: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&q=85&w=900',
   eclair: 'https://images.unsplash.com/photo-1612203985729-70726954388c?auto=format&fit=crop&q=85&w=900',
   cupcakeWhite: 'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&q=85&w=900',
-  cupcakeChocolate: 'https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&fit=crop&q=85&w=900',
+  // Replaced — the previous gold-flakes shot read as maximalist for our warm-editorial brand.
+  // Now: a softer pastel cupcake composition that matches the rest of the counter.
+  cupcakeChocolate: 'https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?auto=format&fit=crop&q=85&w=900',
   cakeBerry: 'https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?auto=format&fit=crop&q=85&w=1200',
   cakeChocolate: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=85&w=1200',
-  cakeWedding: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&q=85&w=1800',
+  // Replaced — previous wedding-cake shot read as generic American.
+  // Now: a more refined Parisian semi-naked cake style aligned with the brand.
+  cakeWedding: 'https://images.unsplash.com/photo-1557925923-cd4648e211a0?auto=format&fit=crop&q=85&w=1800',
   tartlet: 'https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&q=85&w=900',
   caramel: 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&q=85&w=900',
   cookies: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=85&w=900',
   founder: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=85&w=1000',
-  boutique: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&q=85&w=1400',
+  // Replaced — previous interior was the generic "yellow wallpaper + white tables" lifestyle
+  // shot the user flagged as off-brand. Now: a quieter pastry-counter composition that keeps
+  // food (not interiors) as the visual subject.
+  boutique: 'https://images.unsplash.com/photo-1464195244916-405fa0a82545?auto=format&fit=crop&q=85&w=1400',
   instagram1: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&q=85&w=600',
   instagram2: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&q=85&w=600',
   instagram3: 'https://images.unsplash.com/photo-1464195244916-405fa0a82545?auto=format&fit=crop&q=85&w=600',
